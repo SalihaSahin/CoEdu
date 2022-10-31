@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trainer-add-image.component.css'],
 })
 export class TrainerAddImageComponent implements OnInit {
-  trainerId: string;
+  trainerId: string; 
   file: any;
   insert: boolean = true;
   filePreview:any
