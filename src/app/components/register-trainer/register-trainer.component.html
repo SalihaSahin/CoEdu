@@ -1,0 +1,34 @@
+
+<body class="text-center">
+  <main class="form-signin w-100 m-auto">
+      <form [formGroup]="registerTrainerForm" id="trainerForm">
+        <h1 class="h3 mb-3 fw-normal">Eğitmen Üye Ol</h1>
+  
+        <div class="form-floating">
+          <input type="text" formControlName="TrainerName" class="form-control" id="TrainerName" placeholder="First Name">
+          <label for="TrainerName">Adınız</label>
+        </div>
+  
+        <div class="form-floating mb-2">
+          <input type="text" formControlName="TrainerSurName" class="form-control" id="TrainerSurName" placeholder="Last Name">
+          <label for="TrainerSurName">Soyadınız</label>
+        </div>
+  
+        <div class="form-floating mb-2">
+          <input type="email" formControlName="TrainerEmail" class="form-control" id="TrainerEmail" placeholder="name@example.com">
+          <label for="TrainerEmail">E-posta</label>
+        </div>
+  
+        <div class="form-floating mb-2">
+          <input type="password" formControlName="TrainerPassword" class="form-control" id="TrainerPassword" placeholder="TrainerPassword">
+          <label for="TrainerPassword">Parola</label>
+        </div>
+  
+        <button class="w-100 btn btn-md btn btn-outline-dark" type="submit" (click)="registerTrainer()"
+          [disabled]="!registerTrainerForm.valid" >Üye ol</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
+      </form>
+</main>
+
+</body>
+      

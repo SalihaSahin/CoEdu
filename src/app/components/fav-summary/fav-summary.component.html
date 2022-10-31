@@ -1,0 +1,30 @@
+<li *ngIf="favItems" class="nav-item dropdown">
+  <a
+    class="nav-link dropdown-toggle"
+    href="#"
+    id="navbarDropdown"
+    role="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Favorileriniz
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <li *ngFor="let favItem of favItems">
+      <a class="dropdown-item"
+        ><div  routerLink="trainers/trainer/{{favItem.trainerDetail.trainerId}}"><span class="badge text-bg-secondary"></span
+        >{{ favItem.trainerDetail.trainerName }}
+        {{ favItem.trainerDetail.trainerSurname }}<span> : </span>
+        {{ favItem.trainerDetail.educationName }} <span>(</span
+        >{{ favItem.trainerDetail.trainerBranch }} <span>)</span
+        ></div><span
+          (click)="removeFromFav(favItem.trainerDetail)"
+          class="badge text-bg-secondary"
+          >Sil</span
+        ></a
+      >
+    </li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item" (click)="getFav()">Favorilere Git</a></li>
+  </ul>
+</li>

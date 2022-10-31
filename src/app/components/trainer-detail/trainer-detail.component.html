@@ -1,0 +1,44 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div class="mb-3 mt-3">
+    <label for="filterText" class="form-label">Eğitmen ara</label>
+    <input
+        type="text"
+        [(ngModel)]="filterText"
+        class="form-control"
+        id="filterText"
+        placeholder="Arama ifadesi giriniz"
+      />
+  </div>
+  <div *ngIf="filterText" class="alert alert-success">
+    {{filterText}} aradınız
+  </div>
+
+  <div class="row g-0">
+  <div *ngFor="let trainer of trainerDetails | filterPipe:filterText" class="card mx-2 mt-5" style="max-width: 440px;">
+      <div class="col-md-4 ">
+        <img src="{{trainer.images ? 'data:image/jpg;base64,' + trainer.images[0]: '...'}}" class="img-fluid rounded-start" alt="..."> -
+      </div>
+     
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">{{trainer.trainerName}} {{trainer.trainerSurname}}</h5>
+          <p class="card-text">{{trainer.trainerBranch}}</p>
+          <p class="card-text"> {{trainer.trainerWage | currency}}</p>
+          <p class="card-text"><small class="text-muted">{{trainer.addressName}}</small></p>
+          <p class="card-text"><small class="text-muted">{{trainer.formOfEduName}}</small></p>
+          <p class="card-text"><small class="text-muted">{{trainer.educationName}}</small></p>
+        <div  class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button *ngIf="authService.isAuthenticated()" routerLink="trainers/trainer/{{trainer.trainerId}}" class="btn btn-success">Detay</button>
+          <button (click)="addToFav(trainer)" type="button" class="btn btn-danger">Favorilere Ekle</button>
+        </div>
+        </div>
+      </div>  
+    </div>
+    
+  </div>
+
+<!-- 
+ *ngFor="let trainer of trainers" (click)="setCurrentTrainer(trainer)" routerLink="trainerDetail/trainer/{{trainer.trainerId}}" type="button" 
+  [class]="getCurrentTrainerClass(trainer)" -->

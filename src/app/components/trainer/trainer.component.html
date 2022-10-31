@@ -1,0 +1,58 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+<div *ngIf="dataLoaded">
+
+  
+  <table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{trainerDetail.trainerId}}</td>
+        <td>{{trainerDetail.trainerName}}</td>
+        <td>{{trainerDetail.trainerSurname}}</td>
+        <td>{{trainerDetail.trainerPhone}}</td>
+        <td>{{trainerDetail.trainerEmail}}</td>
+        <td>{{trainerDetail.trainerDate}}</td>
+        <td>{{trainerDetail.trainerGender}}</td>
+        <td>{{trainerDetail.trainerBranch}}</td>
+        <td>{{trainerDetail.trainerSchool}}</td>
+        <td>{{trainerDetail.trainerAbout}}</td>
+        <td>{{trainerDetail.aboutLessInfo}}</td>
+        <td>{{trainerDetail.addressName}}</td>
+        <td>{{trainerDetail.trainerWage}}</td>
+        <td>{{trainerDetail.formOfEduName}}</td>
+      </tr>
+     
+    </tbody>
+  </table>
+  <div >
+    <img *ngFor="let image of trainerDetail.images" width="256" height="256" src="{{image ? 'data:image/jpg;base64,' + image : ''}}" alt="none">
+    <button *ngIf="authService.role=='trainer' || authService.role=='admin'" class="btn btn-warning me-2" (click)="navigateUpdate()">Güncelle</button>
+ 
+  </div>
+
+</div>
+    
+
+

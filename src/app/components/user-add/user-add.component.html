@@ -1,0 +1,65 @@
+<div class="content">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header">
+        <h5 class="title">Kullanıcı Ekle</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="userAddForm">
+          <div class="mb-3">
+            <label for="userName">Eğitmen Adı</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="userName"
+                formControlName="userName"
+                class="form-control"
+                placeholder="Eğitmen Adı"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="userSurname">Eğitmen Soyadı</label>
+            <div class="form-group">
+              <input
+                type="text"
+                id="userSurname"
+                formControlName="userSurname"
+                class="form-control"
+                placeholder="Eğitmen Soyadı"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="userEmail">Eğitmen Email</label>
+            <div class="form-group">
+              <input
+                type="email"
+                id="userEmail"
+                formControlName="userEmail"
+                class="form-control"
+                placeholder="Eğitmen Email"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="userPassword">Eğitmen Şifre</label>
+            <div class="form-group">
+              <input
+                type="password"
+                id="userPassword"
+                formControlName="userPassword"
+                class="form-control"
+                placeholder="Eğitmen Şifre"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+      </div>
+    </div>
+  </div>
+</div>

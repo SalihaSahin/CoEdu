@@ -1,0 +1,4 @@
+<input class="form-control" type="file" name="file" id="file" (change)="onFileChange($event)">
+
+<img *ngIf="filePreview" width="256" height="256" src="{{filePreview ? filePreview : ''}}" alt="none">
+<input class="btn btn-primary" type="button" (click)="uploadImage()" value="Kaydet">
