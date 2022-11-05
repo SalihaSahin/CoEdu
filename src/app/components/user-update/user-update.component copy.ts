@@ -55,7 +55,7 @@ export class UserUpdateComponent implements OnInit {
       console.log(userModel);
       this.userService.updateUser(userModel).subscribe((response) => {
         this.toastrService.success(response.message, 'Success');
-        //this.router.navigate([`/user/${this.userId}/images`], { queryParams: { insert: 'false' } })
+        this.router.navigate([`/users/${this.userId}/images`], { queryParams: { insert: 'false' } })
       });
     } else {
       this.toastrService.error(

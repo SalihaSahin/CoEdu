@@ -52,16 +52,20 @@
        <ul *ngIf="authService.role=='admin'" class="dropdown-menu">
           <li><a  (click)="trainerAdd()" class="dropdown-item" >Eğitmen Ekle</a></li>
           <li><a  (click)="userAdd()" class="dropdown-item" >Kullanıcı Ekle</a></li>
+          <li><a  (click)="changeUserPassword()" class="dropdown-item" >Şifrenizi Değitirin</a></li>
            <!-- <li><a  routerLink="register" class="dropdown-item" >Kullanıcı Ekle</a></li>//sahte bir kullanıcı ekleme yeri oluştur  -->
           <li><a  (click)="logout()" class="dropdown-item" >Çıkış Yap</a></li>
         </ul>
         <ul *ngIf="authService.role=='trainer'" class="dropdown-menu">
+          <li><a  class="dropdown-item" (click)="trainerProfile()">Profile  </a></li>
           <li><a  class="dropdown-item" (click)="trainerUpdate()">Profile Düzenle </a></li>
+          <li><a  (click)="changeTrainerPassword()" class="dropdown-item" >Şifrenizi Değitirin</a></li>
           <li><a  (click)="logout()" class="dropdown-item" >Çıkış Yap</a></li>
         </ul>
         <ul *ngIf="authService.role=='user'" class="dropdown-menu">
-          <li><a class="dropdown-item" >Profile</a></li>
-          <li><a class="dropdown-item" >Profile</a></li>
+          <li><a class="dropdown-item" (click)="userProfile()" >Profile</a></li>
+          <li><a class="dropdown-item" (click)="userUpdate()" >Profile Düzenle</a></li>
+          <li><a  (click)="changeUserPassword()" class="dropdown-item" >Şifrenizi Değitirin</a></li>
           <li><a  (click)="logout()" class="dropdown-item" >Çıkış Yap</a></li>
         </ul>
        

@@ -1,3 +1,5 @@
+import { TrainerChangePassword } from './../models/trainerchangePassword';
+import { UserChangePassword } from './../models/userchangePassword';
 import { TrainerCreate } from './../models/trainerCreate';
 import { TrainerDetail } from './../models/trainer-detail';
 import { SingleResponseModel } from './../models/singleResponseModel';
@@ -40,6 +42,16 @@ add(trainer:TrainerCreate): Observable<SingleResponseModel<string>>{
 updateTrainer(trainer:Trainer):Observable<ResponseModel> {
   let newPath = this.apiUrl + "trainers/update";
   return this.httpClient.put<ResponseModel>(newPath, trainer);
+}
+
+delete(trainerId:number):Observable<ResponseModel>{
+  let newPath=this.apiUrl+"trainers/delete?id="+trainerId
+  return this.httpClient.delete<ResponseModel>(newPath);
+}
+
+changeTrainerPassword(trainerChangePassword:TrainerChangePassword):Observable<ResponseModel>{
+  let newPath = this.apiUrl +"trainers/changetrainerpassword"
+  return this.httpClient.post<ResponseModel>(newPath,trainerChangePassword);
 }
 
 }

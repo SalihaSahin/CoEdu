@@ -23,12 +23,16 @@ import { TrainerUpdateComponent } from './components/trainer-update/trainer-upda
 import { TrainerAddImageComponent } from './components/trainer-add-image/trainer-add-image.component';
 import { DatePipe } from '@angular/common';
 import { JwtModule } from '@auth0/angular-jwt';
-import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterTrainerComponent } from './components/register-trainer/register-trainer.component';
 import { LoginTrainerComponent } from './components/login-trainer/login-trainer.component';
 
 import { UserComponent } from './components/user/user.component';
 import { UserAddComponent } from './components/user-add/user-add.component';
+import { UserAddImageComponent } from './components/user-add-image/user-add-image.component';
+import { UserChangepasswordComponent } from './components/user-changepassword/user-changepassword.component';
+import { TrainerChangepasswordComponent } from './components/trainer-changepassword/trainer-changepassword.component';
+import { TrainerDeleteComponent } from './components/trainer-delete/trainer-delete.component';
+import { UserDeleteComponent } from './components/user-delete/user-delete.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -49,12 +53,16 @@ export function tokenGetter() {
     RegisterComponent,
     TrainerUpdateComponent,
     TrainerAddImageComponent,
-    ProfileComponent,
     RegisterTrainerComponent,
     LoginTrainerComponent,
     UserUpdateComponent,
     UserComponent,
     UserAddComponent,
+    UserAddImageComponent,
+    UserChangepasswordComponent,
+    TrainerChangepasswordComponent,
+    TrainerDeleteComponent,
+    UserDeleteComponent,
     
   ],
   imports: [

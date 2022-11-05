@@ -6,5 +6,5 @@ export interface User{
     userPasswordHash:string;
     userPasswordSalt:string;
     Status:Boolean;
-    
+    images:string[];
 }

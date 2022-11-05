@@ -41,7 +41,7 @@ userAddForm:FormGroup;
         this.userService.addUser(userModel).subscribe(
           (response) => {
             this.toastrService.success(response.message, 'Başarılı');
-            //this.router.navigate([`/users/${response.data}/images`], { queryParams: { insert: 'true' } }) user-image yazılacak!!!
+            this.router.navigate([`/users/${response.data}/images`], { queryParams: { insert: 'true' } });
           },
           (responseError) => {
             if (responseError.error.Errors.length > 0) {

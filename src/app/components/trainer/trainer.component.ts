@@ -1,8 +1,6 @@
-import { ToastrService } from 'ngx-toastr';
 import { TrainerDetailService } from './../../services/trainer-detail.service';
 import { TrainerDetail } from './../../models/trainer-detail';
 import { TrainerImageService } from './../../services/trainer-image.service';
-import { TrainerService } from './../../services/trainer.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
@@ -35,6 +33,9 @@ export class TrainerComponent implements OnInit {
 
   navigateUpdate() {
     this.router.navigate([`trainers/update/${this.trainerId}`]);
+  }
+  navigateDelete() {
+    this.router.navigate([`trainers/delete/${this.trainerId}`]);
   }
 
   getByTrainerDetailId(trainerId: number) {

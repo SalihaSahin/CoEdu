@@ -1,6 +1,10 @@
+import { UserDeleteComponent } from './components/user-delete/user-delete.component';
+import { TrainerDeleteComponent } from './components/trainer-delete/trainer-delete.component';
+import { TrainerChangepasswordComponent } from './components/trainer-changepassword/trainer-changepassword.component';
+import { UserChangepasswordComponent } from './components/user-changepassword/user-changepassword.component';
+import { UserComponent } from './components/user/user.component';
+import { UserAddImageComponent } from './components/user-add-image/user-add-image.component';
 import { UserAddComponent } from './components/user-add/user-add.component';
-import { AdminGuard } from './guards/admin.guard';
-import { LoginGuard } from './guards/login.guard';
 import { UserUpdateComponent } from './components/user-update/user-update.component copy';
 import { RegisterTrainerComponent } from './components/register-trainer/register-trainer.component';
 import { TrainerUpdateComponent } from './components/trainer-update/trainer-update.component';
@@ -14,6 +18,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
+  //trainer
    {path:"" , pathMatch:"full", component:TrainerDetailComponent},
    {path:"trainers" , component:TrainerDetailComponent},
    {path:"trainers/address/:addressId" , component:TrainerDetailComponent},
@@ -22,16 +27,23 @@ const routes: Routes = [
    {path:"trainers/trainer/:trainerId" , component:TrainerComponent},
    {path:"trainers/add", component:TrainerAddComponent},
    {path:"trainers/add/:trainerId", component:TrainerAddComponent},
-   {path:"login",component:LoginComponent}, 
    {path:"trainers/:trainerId/images", component:TrainerAddImageComponent},
-   {path: "register", component: RegisterComponent },
    {path: "trainer/register", component: RegisterTrainerComponent },
    {path:"trainers/update/:trainerId",component:TrainerUpdateComponent},
-   {path:"users/update/:userId",component:UserUpdateComponent  , canActivate:[LoginGuard,AdminGuard]},
+   {path:"trainers/trainer/trainerchangepassword/:trainerId" , component:TrainerChangepasswordComponent},
+   {path:"trainers/delete/:trainerId", component:TrainerDeleteComponent},
+   //user
+   {path: "register", component: RegisterComponent },
+   {path:"login",component:LoginComponent}, 
+   {path:"users/update/:userId",component:UserUpdateComponent },
    {path:"users/add", component:UserAddComponent},
    {path:"users/add/:userId", component:UserAddComponent},
+   {path:"users/:userId/images", component:UserAddImageComponent},
+   {path:"users/user/:userId" , component:UserComponent},
+   {path:"users/user/userchangepassword/:userId" , component:UserChangepasswordComponent},
+   {path:"users/delete/:userId", component:UserDeleteComponent},
   ];
-
+  
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

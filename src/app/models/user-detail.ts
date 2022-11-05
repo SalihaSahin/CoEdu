@@ -1,8 +1,8 @@
 export interface UserDetailModel{
-    UserId:number;
-    UserName:string;
-    UserSurname:string;
-    UserEmail: string;
-    
+    userId:number;
+    userName:string;
+    userSurname:string;
+    userEmail: string;
+    images:string[];
     
 }

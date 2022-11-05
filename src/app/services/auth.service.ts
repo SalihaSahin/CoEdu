@@ -17,6 +17,7 @@ import { RegisterTrainerModel } from '../models/register-trainer';
 export class AuthService {
   fullName: string;
   role:string;
+  identifier:string;
 
   apiUrl='https://localhost:44345/api/auth/';
   
@@ -69,5 +70,11 @@ export class AuthService {
     this.role=role;
   }
  
+  nameidentifier(){
+    let token = localStorage.getItem('token');
+    let IdToken= this.jwtHelperService.decodeToken(token);
+    let identifier = IdToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];
+    this.identifier=identifier;
+  }
 
 }

@@ -1,6 +1,7 @@
+import { User } from './../../models/user';
 import { Trainer } from './../../models/trainer';
 import { UserService } from './../../services/user.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { TrainerService } from 'src/app/services/trainer.service';
@@ -14,22 +15,25 @@ export class NaviComponent implements OnInit {
   trainerId: number;
   userId: number;
   trainer: Trainer;
+  user:User;
 
   constructor(
     public authService: AuthService,
     private router: Router,
-    private trainerService: TrainerService
-  ) //private userService:UserService,
-
+    private trainerService: TrainerService,
+    private activatedRoute: ActivatedRoute,
+    private userService:UserService,
+  )
   {}
 
   ngOnInit(): void {
     if (this.isAuthenticated()) {
+      
       this.authService.decodeToken();
       this.authService.roleToken();
-      this.trainerService.getByTrainerId(this.trainerId);
-      //this.getUserById(this.userId);
+      this.authService.nameidentifier();
     }
+   
   }
 
   login() {
@@ -50,24 +54,40 @@ export class NaviComponent implements OnInit {
   isAuthenticated() {
     return this.authService.isAuthenticated();
   }
-
+//Admin
   trainerAdd() {
     this.router.navigate(['trainers/add']);
   }
-  trainerUpdate() {
-    this.router.navigate([`trainers/update/${this.trainerId}`]);
-  }
-  getTrainerById(trainerId: number) {
-    this.trainerService.getByTrainerId(trainerId).subscribe((response) => {
-      this.trainer = response.data;
-    });
-  }
-
-  // getUserById(userId:number){
-  //   this.userService.getByUserId(userId);
-  // }
-
+  
   userAdd(){
-    this.router.navigate(["users/add"]);
+    this.router.navigate(['users/add']);
   }
+  
+
+//trainer
+  trainerUpdate() {
+    this.router.navigate([`trainers/update/${this.authService.identifier}`]);
+  }
+ 
+  
+  trainerProfile() {
+    this.router.navigate([`trainers/trainer/${this.authService.identifier}`]);
+  }
+  changeTrainerPassword(){
+    this.router.navigate([`trainers/trainer/trainerchangepassword/${this.authService.identifier}`]);
+  }
+  
+
+//User
+  userProfile(){
+    this.router.navigate([`users/user/${this.authService.identifier}`]);
+  }
+  userUpdate(){
+    this.router.navigate([`users/update/${this.authService.identifier}`]);
+  }
+  changeUserPassword(){
+    this.router.navigate([`users/user/userchangepassword/${this.authService.identifier}`]);
+  }
+
+
 }

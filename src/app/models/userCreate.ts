@@ -4,5 +4,5 @@ export interface UserCreate{
     userSurname:string;
     userEmail: string; 
     userPassword:string;
-    
+    images:string[];
 }

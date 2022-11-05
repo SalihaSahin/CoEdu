@@ -1,1 +1,37 @@
-<p>user works!</p>
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+
+<div *ngIf="dataLoaded">
+
+  
+  <table class="table">
+    <thead>
+      <tr>
+        
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+        <th scope="col">#</th>
+      
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{userDetail.userId}}</td>
+        <td>{{userDetail.userName}}</td>
+        <td>{{userDetail.userSurname}}</td>     
+        <td>{{userDetail.userEmail}}</td>
+       
+      </tr>
+     
+    </tbody>
+  </table>
+  <div >
+    <img *ngFor="let image of userDetail.images" width="256" height="256" src="{{image ? 'data:image/jpg;base64,' + image : ''}}" alt="none">
+    <button *ngIf="authService.role=='user' || authService.role=='admin'" class="btn btn-warning me-2" (click)="navigateUpdate()">Güncelle</button>
+ 
+  </div>
+
+</div>
