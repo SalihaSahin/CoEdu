@@ -29,7 +29,7 @@
     </tbody>
   </table>
   <div >
-    <img *ngFor="let image of userDetail.images" width="256" height="256" src="{{image ? 'data:image/jpg;base64,' + image : ''}}" alt="none">
+    <img  *ngFor="let image of userDetail.images" width="256" height="256" src="{{image ? 'data:image/jpg;base64,' + image :''}}" alt="none">
     <button *ngIf="authService.role=='user' || authService.role=='admin'" class="btn btn-warning me-2" (click)="navigateUpdate()">Güncelle</button>
  
   </div>

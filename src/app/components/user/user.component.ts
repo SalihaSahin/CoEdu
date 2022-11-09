@@ -40,7 +40,7 @@ export class UserComponent implements OnInit {
       .subscribe((response) => {
         if (response.data.length > 0) {
           this.userDetail.images = response.data.map(
-            (image) => image.imagePath
+            (image) => image.imagePath 
           );
           this.dataLoaded = true;
         }

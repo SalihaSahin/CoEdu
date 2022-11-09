@@ -1,3 +1,4 @@
+import { ResponseModel } from './../models/responseModel';
 import { TrainerImage } from './../models/trainer-image';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -35,5 +36,11 @@ export class TrainerImageService {
     formData.append("TrainerId", trainerId);
     formData.append("ImagePath", "wwwroot/Uploads/Images");
     return this.httpClient.put(newPath,formData)
+  }
+  delete(imageId: number): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(
+      this.apiUrl + 'trainerimages/delete',
+      imageId
+    );
   }
 }

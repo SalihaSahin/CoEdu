@@ -1,13 +1,16 @@
 <div *ngIf="dataLoaded" class="card">
+   
     <div class="card-header">
+        
         <div class="d-flex justify-content-between">
             <h5>{{trainer.trainerName}} {{trainer.trainerSurname}} Eğitmeni Sil</h5>
+          
         </div>
   
     </div>
     <div class="card-body">
         <strong>{{trainer.trainerId}}</strong> id değerine sahip <strong>{{trainer.trainerName}} {{trainer.trainerSurname}}</strong> aracını silmek istediğinizden emin misiniz?<br>
-  
+        
         <div class="row mt-3">
             <div class="d-flex justify-content-end">
               <button (click)="delete()" type="button" class="btn btn-success me-2">Sil</button>
@@ -16,3 +19,7 @@
         </div>
     </div>
   </div>
+  <div *ngIf="dataLoaded">
+      <img  *ngFor="let image of trainer.images" width="256" height="256" src="{{image ? 'data:image/jpg;base64,' + image : ''}}" alt="none">
+  </div>
+  

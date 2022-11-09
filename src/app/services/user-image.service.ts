@@ -1,3 +1,4 @@
+import { ResponseModel } from './../models/responseModel';
 import { UserImage } from './../models/user-image';
 import { ListResponseModel } from './../models/listResponseModel';
 import { Observable } from 'rxjs';
@@ -33,5 +34,11 @@ export class UserImageService {
     formData.append("UserId", userId);
     formData.append("ImagePath", "wwwroot/Uploads/Images");
     return this.httpClient.put(newPath,formData)
+  }
+  delete(imageId: number): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(
+      this.apiUrl + 'userimages/delete',
+      imageId
+    );
   }
 }

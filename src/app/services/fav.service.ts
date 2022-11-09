@@ -1,24 +1,26 @@
+import { ToastrService } from 'ngx-toastr';
 import { FavItems } from './../models/favItems';
-import { FavItem } from './../models/favItem';
 import { TrainerDetail } from './../models/trainer-detail';
 import { Injectable } from '@angular/core';
+import { FavItem } from '../models/favItem';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavService {
-
+ 
   constructor() { }
 
   addToFav(trainerDetail:TrainerDetail){
-    let item= FavItems.find(f=>f.trainerDetail.trainerId===trainerDetail.trainerId);
+     let item= FavItems.find(f=>f.trainerDetail.trainerId===trainerDetail.trainerId);
     if(item){
-      item.quantity+=1;
+     item.quantity=1;
     }else{
       let favItem= new FavItem();
       favItem.trainerDetail=trainerDetail;
       favItem.quantity = 1;
       FavItems.push(favItem)
+
     }
     
   }

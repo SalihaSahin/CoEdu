@@ -10,7 +10,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { TrainerComponent } from './components/trainer/trainer.component';
 import { TrainerDetailComponent } from './components/trainer-detail/trainer-detail.component';
 import { VatAddedPipe } from './pipes/vat-added.pipe';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";     
 import { FilterPipePipe } from './pipes/filter-pipe.pipe'
 
 import {BrowserAnimationsModule}  from "@angular/platform-browser/animations"
@@ -33,6 +33,7 @@ import { UserChangepasswordComponent } from './components/user-changepassword/us
 import { TrainerChangepasswordComponent } from './components/trainer-changepassword/trainer-changepassword.component';
 import { TrainerDeleteComponent } from './components/trainer-delete/trainer-delete.component';
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
+import { FavTrainerListComponent } from './components/fav-trainer-list/fav-trainer-list.component';
 
 export function tokenGetter() {
   return localStorage.getItem("token");
@@ -63,6 +64,8 @@ export function tokenGetter() {
     TrainerChangepasswordComponent,
     TrainerDeleteComponent,
     UserDeleteComponent,
+    FavTrainerListComponent
+
     
   ],
   imports: [

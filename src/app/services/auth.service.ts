@@ -48,14 +48,7 @@ export class AuthService {
   registerTrainer(registerTrainerModel: RegisterTrainerModel): Observable<SingleResponseModel<TokenModel>> {
     return this.httpClient.post<SingleResponseModel<TokenModel>>(this.apiUrl + "trainer/register", registerTrainerModel)
   }
-
-  // update(userModel:UserModel): Observable<SingleResponseModel<UserModel>> {
-  //   let newPath=this.apiUrl+"/update";
-  //   return this.httpClient.post<SingleResponseModel<UserModel>>(newPath,userModel)
-  // }
-
   
-
   decodeToken() {
     let token = localStorage.getItem('token');
     let decodedToken = this.jwtHelperService.decodeToken(token);
@@ -77,4 +70,5 @@ export class AuthService {
     this.identifier=identifier;
   }
 
+  
 }

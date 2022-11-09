@@ -1,3 +1,4 @@
+<body>
 <li *ngIf="favItems" class="nav-item dropdown">
   <a
     class="nav-link dropdown-toggle"
@@ -17,14 +18,16 @@
         {{ favItem.trainerDetail.trainerSurname }}<span> : </span>
         {{ favItem.trainerDetail.educationName }} <span>(</span
         >{{ favItem.trainerDetail.trainerBranch }} <span>)</span
-        ></div><span
+        ></div><button type="btn" 
           (click)="removeFromFav(favItem.trainerDetail)"
-          class="badge text-bg-secondary"
-          >Sil</span
+          class="  btn btn-outline-danger delete"
+          >Sil</button
         ></a
       >
     </li>
     <li><hr class="dropdown-divider" /></li>
-    <li><a class="dropdown-item" (click)="getFav()">Favorilere Git</a></li>
+    <li ><a class="dropdown-item fav-go"  routerLink="/favtrainerlist">Favorilere Git</a></li>
   </ul>
 </li>
+  
+</body>

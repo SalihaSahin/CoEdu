@@ -1,7 +1,7 @@
+
+
 import { FavService } from './../../services/fav.service';
 import { TrainerImageService } from './../../services/trainer-image.service';
-import { TrainerComponent } from './../trainer/trainer.component';
-import { Address } from 'src/app/models/address';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TrainerDetailService } from './../../services/trainer-detail.service';
 import { TrainerDetail } from './../../models/trainer-detail';
@@ -123,8 +123,9 @@ export class TrainerDetailComponent implements OnInit {
 
   addToFav(trainerDetail: TrainerDetail) {
     if(this.isAuthenticated()){
-    this.toastrService.success('Favorilere Eklendi', trainerDetail.trainerName);
-    this.favService.addToFav(trainerDetail);
+      this.favService.addToFav(trainerDetail); 
+    this.toastrService.success('Favorilere Eklendi', trainerDetail.trainerName+' '+trainerDetail.trainerSurname);
+      
   }
   else{
     this.toastrService.error('Lütfen öncelikle üye olunuz ya da giriş yapınız')

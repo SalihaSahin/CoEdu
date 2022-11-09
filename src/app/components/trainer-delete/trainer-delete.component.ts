@@ -1,3 +1,5 @@
+import { TrainerImageService } from './../../services/trainer-image.service';
+import { TrainerImage } from './../../models/trainer-image';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Trainer } from 'src/app/models/trainer';
 import { ToastrService } from 'ngx-toastr';
@@ -13,8 +15,12 @@ export class TrainerDeleteComponent implements OnInit {
   trainer:Trainer;
   trainerId:number;
   dataLoaded=false;
+  images: TrainerImage[];
+  imageId: number[];
+ 
   constructor(
     private trainerService:TrainerService,
+    private trainerImageService:TrainerImageService,
     private toastrService:ToastrService,
     private router:Router,
     private activatedRoute:ActivatedRoute
@@ -24,7 +30,6 @@ export class TrainerDeleteComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       if (this.trainerId =params['trainerId']) {
         this.getTrainerById(this.trainerId );
-        //this.getTrainers();
       }
     });
   }
@@ -33,7 +38,8 @@ export class TrainerDeleteComponent implements OnInit {
     this.trainerService.getByTrainerId(trainerId).subscribe(response=>{
       this.trainer = response.data;
       this.dataLoaded = true;
-    })
+          this.getTrainerImages();
+    });
   }
 
   closeTrainerDeleteModal(){
@@ -44,8 +50,43 @@ export class TrainerDeleteComponent implements OnInit {
     this.trainerService.delete(this.trainer.trainerId).subscribe(response=>{
       this.toastrService.success(this.trainer.trainerName + " " +this.trainer.trainerSurname, response.message)
       this.closeTrainerDeleteModal();
+      this.deleteImageTrainer();
     },responseError=>{
       this.toastrService.error(responseError.error.message,"Silme Başarısız")
     })
+  }
+
+   getTrainerImages() {
+    this.trainerImageService
+      .getImagesByTrainerId(this.trainerId)
+      .subscribe((response) => {
+        if (response.data.length > 0) {
+          this.trainer.images = response.data.map(
+            (image) => image.imagePath
+          );
+          this.dataLoaded = true;
+        }
+      });
+  }
+
+
+  getImageByTrainerId() {
+    this.trainerImageService.getImagesByTrainerId(this.trainerId).subscribe((response) => {
+      this.images = response.data;
+      this.dataLoaded = true;
+     
+    });
+  }
+
+  deleteImageTrainer() {
+    this.trainerImageService.getImagesByTrainerId(this.trainerId).subscribe((response) => {
+      this.images = response.data;
+      this.images?.forEach((image) => {
+        this.trainerImageService.delete(Number(image.id)).subscribe((response) => {
+          this.toastrService.success('Resim Silindi', 'Başarılı');
+         
+        });
+      });
+    });
   }
 }

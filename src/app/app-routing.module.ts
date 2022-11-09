@@ -1,3 +1,4 @@
+import { FavTrainerListComponent } from './components/fav-trainer-list/fav-trainer-list.component';
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
 import { TrainerDeleteComponent } from './components/trainer-delete/trainer-delete.component';
 import { TrainerChangepasswordComponent } from './components/trainer-changepassword/trainer-changepassword.component';
@@ -17,7 +18,7 @@ import { TrainerComponent } from './components/trainer/trainer.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
+const routes: Routes = [  
   //trainer
    {path:"" , pathMatch:"full", component:TrainerDetailComponent},
    {path:"trainers" , component:TrainerDetailComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
    {path:"trainers/update/:trainerId",component:TrainerUpdateComponent},
    {path:"trainers/trainer/trainerchangepassword/:trainerId" , component:TrainerChangepasswordComponent},
    {path:"trainers/delete/:trainerId", component:TrainerDeleteComponent},
+   {path:"favtrainerlist", component:FavTrainerListComponent},
    //user
    {path: "register", component: RegisterComponent },
    {path:"login",component:LoginComponent}, 
@@ -42,6 +44,7 @@ const routes: Routes = [
    {path:"users/user/:userId" , component:UserComponent},
    {path:"users/user/userchangepassword/:userId" , component:UserChangepasswordComponent},
    {path:"users/delete/:userId", component:UserDeleteComponent},
+
   ];
   
 @NgModule({

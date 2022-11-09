@@ -10,7 +10,6 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "~13.3.0",
     "@angular/common": "~13.3.0",
     "@angular/compiler": "~13.3.0",
     "@angular/core": "~13.3.0",
@@ -19,10 +18,17 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "@auth0/angular-jwt": "^5.1.0",
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@popperjs/core": "^2.11.6",
+    "angular": "^1.8.3",
+    "angular-dynamic-dialog": "^1.0.7",
+    "angular-font-awesome": "^3.1.2",
     "bootstrap": "^5.2.0-beta1",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
-    "ngx": "^2.4.0",
+    "ng2-dynamic-dialog": "^5.0.0",
+    "ngx": "^2.3.0",
     "ngx-toastr": "^14.3.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
@@ -40,6 +46,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
+    "lite-server": "^2.6.1",
     "typescript": "~4.6.2"
   }
 }

@@ -44,7 +44,7 @@ export class TrainerComponent implements OnInit {
       .subscribe((response) => {
         this.trainerDetail = response.data;
         console.log(this.trainerDetail);
-
+        this.dataLoaded=true;
         this.getTrainerImages();
       });
   }

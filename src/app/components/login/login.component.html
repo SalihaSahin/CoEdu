@@ -1,5 +1,6 @@
 <body class="text-center">
-  <main class="form-signin w-100 m-auto">
+  
+  <main class="form-signin w-100 ">
     <form [formGroup]="loginForm">
       <h1 class="h3 mb-3 fw-normal">Giriş Yap</h1>
 
@@ -13,6 +14,7 @@
         />
         <label for="floatingInput">E-posta </label>
       </div>
+     
       <div class="form-floating">
         <input
           formControlName="userPassword"
@@ -36,6 +38,7 @@
       <p class="mt-5 mb-3 text-muted">&copy; 2017–2022</p>
     
     </form>
-    <app-login-trainer></app-login-trainer>
+    
   </main>
+  <app-login-trainer></app-login-trainer>
 </body>

@@ -1,0 +1,13 @@
+<body>
+<div  *ngIf="favItems ">
+<div *ngFor="let favItem of favItems" class="card" style="width: 18rem;">
+    <img *ngFor="let image of favItem.trainerDetail.images" width="256" height="256" src="{{image ? 'data:image/jpg;base64,' + image : ''}}" alt="none">
+    <div class="card-body">
+      <h5 class="card-title">{{ favItem.trainerDetail.trainerName }}
+        {{ favItem.trainerDetail.trainerSurname }}</h5>
+      <p class="card-text"> {{ favItem.trainerDetail.educationName }} {{ favItem.trainerDetail.trainerBranch }} </p>
+      <button class="btn  "  type="button"  routerLink="/trainers/trainer/{{favItem.trainerDetail.trainerId}}" >Eğitmenin Profiline Git</button>
+    </div>
+  </div>
+</div>
+</body>
