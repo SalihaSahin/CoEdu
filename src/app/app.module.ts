@@ -1,6 +1,11 @@
+import { AppRoutingModule } from './app-routing.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ToastrModule } from 'ngx-toastr';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 
 
@@ -36,6 +41,7 @@ import { TrainerChangepasswordComponent } from './components/trainer-changepassw
 import { TrainerDeleteComponent } from './components/trainer-delete/trainer-delete.component';
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
 import { FavTrainerListComponent } from './components/fav-trainer-list/fav-trainer-list.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 export function tokenGetter() {
@@ -72,13 +78,13 @@ export function tokenGetter() {
     
   ],
   imports: [
-    // BrowserModule,
-    // AppRoutingModule,
-    // HttpClientModule,
-    // FontAwesomeModule,
-    // FormsModule,
-    // ReactiveFormsModule,
-    // BrowserAnimationsModule,
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     }),
