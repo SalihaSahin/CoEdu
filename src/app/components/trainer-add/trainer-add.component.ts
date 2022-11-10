@@ -11,8 +11,8 @@ import { TrainerService } from './../../services/trainer.service';
 import { Trainer } from 'src/app/models/trainer';
 import { Component, OnInit } from '@angular/core';
 import {
-  FormGroup,
-  FormBuilder,
+  UntypedFormGroup,
+  UntypedFormBuilder,
   Validators,
 } from '@angular/forms';
 
@@ -22,7 +22,7 @@ import {
   styleUrls: ['./trainer-add.component.css'],
 })
 export class TrainerAddComponent implements OnInit {
-  trainerAddForm: FormGroup;
+  trainerAddForm: UntypedFormGroup;
   addresses: Address[] = [];
   formOfEdus: FormOfEdu[] = [];
   educations: Education[] = [];
@@ -34,7 +34,7 @@ export class TrainerAddComponent implements OnInit {
     private educationService: EducationService,
     private formOfEduService: FormOfEduService,
     private addressService: AddressService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private trainerService: TrainerService,
     private toastrService: ToastrService,
     private router: Router

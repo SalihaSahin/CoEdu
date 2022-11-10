@@ -5,10 +5,10 @@ import { ToastrService } from 'ngx-toastr';
 import { FormOfEduService } from './../../services/form-of-edu.service';
 import { AddressService } from './../../services/address.service';
 import { TrainerService } from './../../services/trainer.service';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { Education } from './../../models/education';
 import { FormOfEdu } from './../../models/formOfEdu';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 
 import { Address } from './../../models/address';
 import { Component, OnInit } from '@angular/core';
@@ -27,10 +27,10 @@ export class TrainerUpdateComponent implements OnInit {
   educations:Education[]=[];
   trainerId:number;
   trainer:Trainer;
-  trainerUpdateForm: FormGroup;
+  trainerUpdateForm: UntypedFormGroup;
 
   constructor(
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private trainerService: TrainerService,
     private addressService: AddressService,
     private formOfEdusService: FormOfEduService,

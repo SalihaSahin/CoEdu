@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
@@ -10,10 +10,10 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login-trainer.component.css']
 })
 export class LoginTrainerComponent implements OnInit {
-  loginTrainerForm:FormGroup
+  loginTrainerForm:UntypedFormGroup
 
   constructor(
-    private formBuilder:FormBuilder, 
+    private formBuilder:UntypedFormBuilder, 
     private authService:AuthService,
     private toastrService:ToastrService,
     private router:Router

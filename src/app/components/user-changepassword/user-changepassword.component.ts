@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, Validators, UntypedFormGroup } from '@angular/forms';
 import { UserService } from './../../services/user.service';
 import { ToastrService } from 'ngx-toastr';
 import { Component, OnInit } from '@angular/core';
@@ -11,12 +11,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-changepassword.component.css']
 })
 export class UserChangepasswordComponent implements OnInit {
-  updatePasswordForm:FormGroup;
+  updatePasswordForm:UntypedFormGroup;
 
   constructor(
     private toastrService: ToastrService,
     private userService:UserService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private authService:AuthService,
     private router:Router
   ) { }

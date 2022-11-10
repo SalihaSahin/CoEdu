@@ -1,10 +1,10 @@
 import { Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from './../../services/auth.service';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { TrainerService } from 'src/app/services/trainer.service';
 import { ToastrService } from 'ngx-toastr';
-import { FormGroup } from '@angular/forms';
+import { UntypedFormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -14,12 +14,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerChangepasswordComponent implements OnInit {
 
-  updatePasswordForm:FormGroup;
+  updatePasswordForm:UntypedFormGroup;
 
   constructor(
     private toastrService: ToastrService,
     private trainerService:TrainerService,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     private authService:AuthService,
     private router:Router
   ) { }
