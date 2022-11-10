@@ -1,7 +1,7 @@
+import { Router, ActivatedRoute } from '@angular/router';
 import { User } from './../../models/user';
 import { Trainer } from './../../models/trainer';
 import { UserService } from './../../services/user.service';
-import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { TrainerService } from 'src/app/services/trainer.service';
