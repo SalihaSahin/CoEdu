@@ -1,7 +1,7 @@
 <body>
 <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
-    <a class="navbar-brand">Navbar  </a>
+    <a class="navbar-brand"><img src="../../../assets/image/logo.png" width="25%" alt=""> <b>CLRFULEDU</b>    </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -16,10 +16,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="">Ana Sayfa </a>
+          <a class="nav-link active btn rounded-pill" aria-current="page" href="">Ana Sayfa </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  aria-current="page" href="" >Hakkımızda</a>
+          <a class="nav-link btn rounded-pill "  aria-current="page" href="" >Hakkımızda</a>
         </li>
 <li>
   <app-fav-summary></app-fav-summary>
@@ -47,7 +47,7 @@
         </form>
       </div>
       <div class="dropdown" *ngIf="isAuthenticated()">
-        <a class="btn btn-secondary dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class="btn rounded-pill userNameBox dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
           {{ authService.fullName }}
         </a>
        <ul *ngIf="authService.role=='admin'" class="dropdown-menu">
@@ -74,4 +74,5 @@
     </div>
   </div>
 </nav>
+<hr class="navi-line">
 </body>

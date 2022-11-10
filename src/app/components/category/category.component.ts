@@ -66,7 +66,7 @@ export class CategoryComponent implements OnInit {
  
     if(address==this.currentAddress){
    
-      return "list-group-item active"
+      return "list-group-item "
         }
         else{
           return "list-group-item"
@@ -85,7 +85,7 @@ export class CategoryComponent implements OnInit {
    
     if(formOfEdu==this.currentFormOfEdu){
      
-      return "list-group-item active"
+      return "list-group-item "
         }
         else{
           return "list-group-item"
@@ -103,7 +103,7 @@ export class CategoryComponent implements OnInit {
  
     if(education==this.currentEducation){
    
-      return "list-group-item active"
+      return "list-group-item "
         }
         else{
           return "list-group-item"
@@ -131,7 +131,7 @@ export class CategoryComponent implements OnInit {
 
   getAllTrainersClass(){
     if(!this.currentAddress || !this.currentFormOfEdu){
-      return "list-group-item active"
+      return "list-group-item "
         }
         else{
           return "list-group-item"

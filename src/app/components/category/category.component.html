@@ -1,5 +1,5 @@
-<ul class="list-group">
-  <li (click)=" setDeletedCurrentCategory() " routerLink="/" [class]="getAllTrainersClass()">Tüm Eğitmenler</li>
+<ul class="list-group ">
+  <li class="x" (click)=" setDeletedCurrentCategory() " routerLink="/" [class]="getAllTrainersClass()">Tüm Eğitmenler</li>
     <li (click)="setCurrentAddress(address)" routerLink="/trainers/address/{{address.id}}" *ngFor="let address of addresses" [class]="getCurrentAddressClass(address)">{{address.addressName}}</li>
     <li (click)="setCurrentEducation(education)" routerLink="/trainers/eductaion/{{education.id}}" *ngFor="let education of educations" [class]="getCurrentEducationClass(education)">{{education.eduName}}</li>
     <li (click)="setCurrentFormOfEdu(formOfEdu)" routerLink="/trainers/formOfEdu/{{formOfEdu.id}}" *ngFor="let formOfEdu of formOfEdus" [class]="getCurrentFormOfEduClass(formOfEdu)">{{formOfEdu.formOfEduName}}</li>

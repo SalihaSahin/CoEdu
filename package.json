@@ -30,6 +30,7 @@
     "ng2-dynamic-dialog": "^5.0.0",
     "ngx": "^2.3.0",
     "ngx-toastr": "^14.3.0",
+    "radium": "^0.26.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

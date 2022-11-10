@@ -1,11 +1,13 @@
 body a.nav-link:hover{
    color:#3E82BD;
-   font-size: 18px;
-   font-size: large;
+   border-color: #3E82BD;
+ 
 }
+
 body button:hover{
     background-color: #FFC09F;
     border:#FFC09F;
     color:#ffff;
    font-size: large;
 }
+

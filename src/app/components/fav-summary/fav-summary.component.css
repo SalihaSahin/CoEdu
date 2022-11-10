@@ -1,7 +1,7 @@
 a.nav-link:hover{
     color:#35C145;
-    font-size: 18px;
-    font-size: large;
+    border: 0.5px solid #35C145;
+    border-radius: 30px;
 }
 /* button.delete{
     font-size: 15px;

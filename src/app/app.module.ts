@@ -35,6 +35,7 @@ import { TrainerDeleteComponent } from './components/trainer-delete/trainer-dele
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
 import { FavTrainerListComponent } from './components/fav-trainer-list/fav-trainer-list.component';
 
+
 export function tokenGetter() {
   return localStorage.getItem("token");
 }

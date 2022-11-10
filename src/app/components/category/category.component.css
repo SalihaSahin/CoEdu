@@ -1,0 +1,21 @@
+li{
+    border:none;
+}
+li.x{ 
+    border: 1px solid#FFC09F;
+    border-radius: 40px ;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+li:nth-child(2n + 1):hover{
+    background-color: #FFC09F;
+    color: #ffff;
+    border-radius: 50px;
+    border:none;
+}
+li:nth-child(2n):hover{
+    background-color: #35C145;
+    color: #ffff;
+    border-radius: 50px;
+    border:none;
+}
