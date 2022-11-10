@@ -1,29 +1,30 @@
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { JwtModule } from '@auth0/angular-jwt';
+import { ToastrModule } from 'ngx-toastr';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { DatePipe } from '@angular/common';
+
+
+
 import { UserUpdateComponent } from './components/user-update/user-update.component copy';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { CategoryComponent } from './components/category/category.component';
 import { TrainerComponent } from './components/trainer/trainer.component';
 import { TrainerDetailComponent } from './components/trainer-detail/trainer-detail.component';
-import { VatAddedPipe } from './pipes/vat-added.pipe';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";     
+import { VatAddedPipe } from './pipes/vat-added.pipe';   
 import { FilterPipePipe } from './pipes/filter-pipe.pipe'
 
-import {BrowserAnimationsModule}  from "@angular/platform-browser/animations"
-import { ToastrModule } from 'ngx-toastr';
+
+
 import { FavSummaryComponent } from './components/fav-summary/fav-summary.component';
 import { TrainerAddComponent } from './components/trainer-add/trainer-add.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { TrainerUpdateComponent } from './components/trainer-update/trainer-update.component';
 import { TrainerAddImageComponent } from './components/trainer-add-image/trainer-add-image.component';
-import { DatePipe } from '@angular/common';
-import { JwtModule } from '@auth0/angular-jwt';
+
 import { RegisterTrainerComponent } from './components/register-trainer/register-trainer.component';
 import { LoginTrainerComponent } from './components/login-trainer/login-trainer.component';
 
@@ -71,13 +72,13 @@ export function tokenGetter() {
     
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FontAwesomeModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
+    // BrowserModule,
+    // AppRoutingModule,
+    // HttpClientModule,
+    // FontAwesomeModule,
+    // FormsModule,
+    // ReactiveFormsModule,
+    // BrowserAnimationsModule,
     ToastrModule.forRoot({
       positionClass:"toast-bottom-right"
     }),
