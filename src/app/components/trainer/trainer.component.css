@@ -41,3 +41,27 @@ color: #14463A;
     color: #ffff;
     
 }
+.small-card{
+    border:none;   
+    /* border-radius:10px ;
+    box-shadow:5px 5px 10px 3px rgb(227, 227, 227); */
+}
+i.smallc-icon{
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #C78561;
+   font-size: 30px;
+    color: #fff;
+  
+}
+button.btn-fav:hover{
+    border: none;
+    color: red;
+    background-color: #fff;
+}
+button.btn-fav{
+    border:0.5px solid #14463A;
+    font-size: 20px;
+    background-color: #14463A;
+    color: #fff;
+}

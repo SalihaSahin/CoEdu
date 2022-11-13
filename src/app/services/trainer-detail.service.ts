@@ -45,7 +45,7 @@ getByTrainerId(trainerId:number):Observable<ListResponseModel<TrainerDetail>>{
 }
 
 getTrainerDetailById(trainerId:number):Observable<SingleResponseModel<TrainerDetail>>{
-  let newPath= this.apiUrl+"trainers/getbyid?trainerId="+trainerId
+  let newPath= this.apiUrl+"trainers/gettrainerdetailbyid?trainerId="+trainerId
   return this.httpClient.get<SingleResponseModel<TrainerDetail>>(newPath);
 }
 

@@ -1,12 +1,19 @@
 <body>
+  <p class="title-p"><i class="fa-regular fa-thumbs-up" ></i> &nbsp; FAVORİLERİNİZ</p>
 <div  *ngIf="favItems ">
-<div *ngFor="let favItem of favItems" class="card" style="width: 18rem;">
-    <img *ngFor="let image of favItem.trainerDetail.images" width="256" height="256" src="{{image ? 'data:image/jpg;base64,' + image : ''}}" alt="none">
+<div *ngFor="let favItem of favItems" class="card mx-4 fav-card" style="display: inline-block;" >
+    <img *ngFor="let image of favItem.trainerDetail.images" width="320" height="320" src="{{image ? 'data:image/jpg;base64,' + image : ''}}" alt="none">
     <div class="card-body">
-      <h5 class="card-title">{{ favItem.trainerDetail.trainerName }}
-        {{ favItem.trainerDetail.trainerSurname }}</h5>
-      <p class="card-text"> {{ favItem.trainerDetail.educationName }} {{ favItem.trainerDetail.trainerBranch }} </p>
-      <button class="btn  "  type="button"  routerLink="/trainers/trainer/{{favItem.trainerDetail.trainerId}}" >Eğitmenin Profiline Git</button>
+      <h5 class="card-title name-title"> <b> {{ favItem.trainerDetail.trainerName }}
+        {{ favItem.trainerDetail.trainerSurname }} </b></h5>
+      <p class="card-text"> {{ favItem.trainerDetail.educationName }}  </p>
+      <p class="card-text"> {{ favItem.trainerDetail.trainerBranch }}</p>
+      <button class="btn go-tra mx-3"  type="button"  routerLink="/trainers/trainer/{{favItem.trainerDetail.trainerId}}" >Eğitmenin Profili &nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></button>
+      <button type="btn" 
+      (click)="removeFromFav(favItem.trainerDetail)"
+      class="  btn btn-delete delete"
+      ><i class="fa-solid fa-trash"></i> Kaldır</button
+    >
     </div>
   </div>
 </div>

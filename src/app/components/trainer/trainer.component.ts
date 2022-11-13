@@ -1,3 +1,5 @@
+import { ToastrService } from 'ngx-toastr';
+import { FavService } from './../../services/fav.service';
 import { AddressService } from './../../services/address.service';
 import { Address } from './../../models/address';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -17,14 +19,17 @@ export class TrainerComponent implements OnInit {
   trainerDetail: TrainerDetail;
   trainerDetails: TrainerDetail[] = [];
   dataLoaded = false;
-addressId:number;
+  addressId: number;
   constructor(
     private trainerDetailService: TrainerDetailService,
     public authService: AuthService,
     private activatedRoute: ActivatedRoute,
     private trainerImageService: TrainerImageService,
     private router: Router,
-    private addressService:AddressService,
+    private addressService: AddressService,
+    private favService: FavService,
+    private toastrService:ToastrService,
+  
   ) {}
 
   //ngOninit component ilkez açıldığında çalışan metottur
@@ -32,7 +37,6 @@ addressId:number;
     this.activatedRoute.params.subscribe((params) => {
       this.trainerId = params['trainerId'];
       this.getByTrainerDetailId(this.trainerId);
-     
     });
   }
 
@@ -43,17 +47,15 @@ addressId:number;
     this.router.navigate([`trainers/delete/${this.trainerId}`]);
   }
 
-
   getByTrainerDetailId(trainerId: number) {
     this.trainerDetailService
       .getTrainerDetailById(trainerId)
       .subscribe((response) => {
         this.trainerDetail = response.data;
         console.log(this.trainerDetail);
-        this.dataLoaded=true;
+        this.dataLoaded = true;
         this.getTrainerImages();
         this.addressService.getAddresses();
-       
       });
   }
 
@@ -69,5 +71,18 @@ addressId:number;
         }
       });
   }
-
+  addToFav(trainerDetail: TrainerDetail) {
+    if(this.isAuthenticated()){
+      this.favService.addToFav(trainerDetail); 
+    this.toastrService.success('Favorilere Eklendi', trainerDetail.trainerName+' '+trainerDetail.trainerSurname);
+      
+  }
+  else{
+    this.toastrService.error('Lütfen öncelikle üye olunuz ya da giriş yapınız')
+    this.router.navigate(['register'])
+  }
+  }
+  isAuthenticated() {
+    return this.authService.isAuthenticated();
+  }
 }

@@ -15,11 +15,12 @@
         <p class="card-text" ><i class="fa-solid fa-building-columns card-icon" ></i>{{trainerDetail.trainerSchool}}</p> 
         <p class="card-text" ><b>{{trainerDetail.trainerBranch}}</b> Bölümü</p> 
         <p   class="card-text " > Saatlik Ücret: <b> {{trainerDetail.trainerWage}}</b> <i class="fa-solid fa-turkish-lira-sign"></i> </p>
-       
+        <button *ngIf="authService.role=='user'||authService.role=='admin' " (click)="addToFav(trainerDetail)" type="button" class="btn btn-fav"> <i class="fa-solid fa-heart"></i></button>
       </div>
     </div>
   </div>
   <div class="col-md-8">
+   
     <div class="card info" >
       <div class="card-body">
         <h5 class="card-title"><i class="fa-solid fa-circle-info"></i> &nbsp; Ders Hakkında </h5>
@@ -34,12 +35,44 @@
       
       </div>
     </div> 
+    <div class="row mb-5">
+      <div class="col">
+        <div class="card small-card" >
+          <div class="card-body">
+          
+            <p class="card-title">  <i class="fa-solid fa-bookmark smallc-icon"></i> <b> &nbsp;{{trainerDetail.educationName}}</b>  </p>
+            <p class="card-text"></p>
+          
+          </div>
+        </div> 
+      </div>
+      <div class="col">
+        <div class="card small-card" >
+          <div class="card-body">
+          
+            <p class="card-title ">  <i class="fa-solid fa-user-group smallc-icon"></i> &nbsp; <b> {{trainerDetail.formOfEduName}} </b></p>
+           
+          </div>
+        </div> 
+      </div>
+      <div class="col">
+        <div class="card small-card " >
+          <div class="card-body">
+           
+            <p class="card-title"> <i class="fa-sharp fa-solid fa-location-dot smallc-icon"></i>  &nbsp; <b> {{trainerDetail.addressName}} </b></p>
+            <p class="card-text"></p>
+          </div>
+        </div> 
+      </div>
+    </div>
+   
+    <div class="text-end">
     <button *ngIf="authService.role=='trainer' || authService.role=='admin'" class="btn btn-update " (click)="navigateUpdate()"><i class="fa-solid fa-pen-nib"></i>Güncelle</button>
     <button type="button" class="btn btn-delete " *ngIf="authService.role=='admin'" (click)="navigateDelete()"><i class="fa-solid fa-trash"></i>Sil</button>
-  </div>
-  </div>
     
-  
+  </div>
+  </div>
+  </div>
  
 </div>
 

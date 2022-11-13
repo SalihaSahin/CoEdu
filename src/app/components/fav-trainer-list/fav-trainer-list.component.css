@@ -1,0 +1,26 @@
+.fav-card{
+    border:none;
+    box-shadow:5px 5px 10px 3px rgb(227, 227, 227); 
+}
+ p.title-p{
+    font-size: 23px;
+}
+button.go-tra{
+    background-color:#14463A ;
+    border-color:#14463A ;
+    color: #fff;
+}
+button.go-tra:hover{
+background-color: #fff;
+color: #14463A;
+}
+button.btn-delete{
+    border: 0.5px solid #C78561;
+    background-color: #fff;
+color: #C78561;
+}
+button.btn-delete:hover{
+    background-color:#C78561 ;
+    border-color:#C78561 ;
+    color: #fff;
+}

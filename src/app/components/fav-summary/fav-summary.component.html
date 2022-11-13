@@ -1,7 +1,7 @@
 
 <li *ngIf="favItems" class="nav-item dropdown">
   <a
-    class="nav-link dropdown-toggle rounded-pill"
+    class="nav-link dropdown-toggle "
     href="#"
     id="navbarDropdown"
     role="button"
@@ -13,20 +13,20 @@
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
     <li *ngFor="let favItem of favItems">
       <a class="dropdown-item"
-        ><div  routerLink="trainers/trainer/{{favItem.trainerDetail.trainerId}}"><span class="badge text-bg-secondary"></span
+        ><div  routerLink="trainers/trainer/{{favItem.trainerDetail.trainerId}}"><span class="badge "></span
         >{{ favItem.trainerDetail.trainerName }}
         {{ favItem.trainerDetail.trainerSurname }}<span>: </span>
         {{ favItem.trainerDetail.educationName }} <span>(</span
         >{{ favItem.trainerDetail.trainerBranch }} <span>)</span
         ></div><button type="btn" 
           (click)="removeFromFav(favItem.trainerDetail)"
-          class="  btn btn-outline-danger delete"
+          class="  btn  btn-delete"
           ><fa-icon [icon]="faTrash"></fa-icon></button
         ></a
       >
     </li>
     <li><hr class="dropdown-divider" /></li>
-    <li ><a class="dropdown-item fav-go"  routerLink="/favtrainerlist">Favorilere Git</a></li>
+    <li ><a class="dropdown-item fav-go"  routerLink="/favtrainerlist"> Favorilere Git&nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></a></li>
   </ul>
 </li>
   

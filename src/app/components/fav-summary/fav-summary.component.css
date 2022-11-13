@@ -1,7 +1,22 @@
 
-.nav-item a{
+a.nav-link{
     color: #fff;
 }
-.nav-item a:hover{
-    color:#CC8264;
+a.nav-link:hover{
+    color: #C78561;
 }
+button.btn-delete:hover{
+    border: 0.5px solid #C78561;
+    background-color: #fff;
+color: #C78561;
+}
+button.btn-delete{
+    background-color:#C78561 ;
+    border-color:#C78561 ;
+    color: #fff;
+}
+a.fav-go{
+   
+    color: #14463A;
+}
+
