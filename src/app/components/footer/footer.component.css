@@ -1,18 +1,14 @@
 body{
     margin-top: 250px;
-    
+    overflow: hidden;
 }
- img.i{
-width: 20%;
-border-radius:50% ;
-margin-bottom: 150px;
+
+ i.row-icon{
+    margin-left:150px ;
+    color: #14463A;
+    font-size: 150px;
 }
 div.box{
-    height: 400px;
-    width: 100%;
-    background-color: #245E52;
-}
-div.box2{
     width: 100%;
     height: 200px;
     background-color: #F1E7DB;

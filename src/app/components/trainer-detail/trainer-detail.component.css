@@ -29,14 +29,6 @@ div.card{
     
 }
 
-.search-trainer{
-   position: absolute;
-    width: 25%;
-    right: 0;
-    bottom: 340px;
-   
-  
-}
 div.trainer-card{
     margin-top:100px ;
 }
@@ -47,10 +39,6 @@ div.search-trainer button{
 div.search-trainer button:hover{
     background-color: #98A7A1;
     color: #ffff;
-}
-p.search-txt{
-    position: absolute;
-    right: 180px; 
 }
 img.tra-img{
    border-radius:10% ; 

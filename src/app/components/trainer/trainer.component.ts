@@ -1,3 +1,5 @@
+import { AddressService } from './../../services/address.service';
+import { Address } from './../../models/address';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TrainerDetailService } from './../../services/trainer-detail.service';
 import { TrainerDetail } from './../../models/trainer-detail';
@@ -13,14 +15,16 @@ import { AuthService } from 'src/app/services/auth.service';
 export class TrainerComponent implements OnInit {
   trainerId: number;
   trainerDetail: TrainerDetail;
+  trainerDetails: TrainerDetail[] = [];
   dataLoaded = false;
-
+addressId:number;
   constructor(
     private trainerDetailService: TrainerDetailService,
     public authService: AuthService,
     private activatedRoute: ActivatedRoute,
     private trainerImageService: TrainerImageService,
-    private router: Router
+    private router: Router,
+    private addressService:AddressService,
   ) {}
 
   //ngOninit component ilkez açıldığında çalışan metottur
@@ -28,6 +32,7 @@ export class TrainerComponent implements OnInit {
     this.activatedRoute.params.subscribe((params) => {
       this.trainerId = params['trainerId'];
       this.getByTrainerDetailId(this.trainerId);
+     
     });
   }
 
@@ -38,6 +43,7 @@ export class TrainerComponent implements OnInit {
     this.router.navigate([`trainers/delete/${this.trainerId}`]);
   }
 
+
   getByTrainerDetailId(trainerId: number) {
     this.trainerDetailService
       .getTrainerDetailById(trainerId)
@@ -46,6 +52,8 @@ export class TrainerComponent implements OnInit {
         console.log(this.trainerDetail);
         this.dataLoaded=true;
         this.getTrainerImages();
+        this.addressService.getAddresses();
+       
       });
   }
 
@@ -61,4 +69,5 @@ export class TrainerComponent implements OnInit {
         }
       });
   }
+
 }

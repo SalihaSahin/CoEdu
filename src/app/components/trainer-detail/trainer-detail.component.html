@@ -14,14 +14,24 @@
         placeholder="Arama ifadesi giriniz "
       />
       </div> -->
-      <p class="search-txt">Eğitmen Ara</p>
-      <div class="input-group mb-3 mt-3 search-trainer">
-        <input type="text" class="form-control"  [(ngModel)]="filterText"    id="filterText"
-        placeholder="Arama ifadesi giriniz ">
-        <div class="input-group-append">
-          <button class="btn " type="button"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+          </div>
+          <div class="col order-12">
+          </div>
+          <div class="col-md-4 order-1">
+            <p class="search-txt">Eğitmen Ara</p>
+            <div class="input-group mb-3 mt-3 search-trainer">
+              <input type="text" class="form-control"  [(ngModel)]="filterText"    id="filterText"
+              placeholder="Arama ifadesi giriniz ">
+              <div class="input-group-append">
+                <button class="btn " type="button"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </div> 
       
   <!-- <div *ngIf="filterText" class="alert alert-success">
     {{filterText}} aradınız

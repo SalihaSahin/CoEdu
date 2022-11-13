@@ -4,58 +4,48 @@
     <span class="visually-hidden">Loading...</span>
   </div>
   
-  <div *ngIf="dataLoaded">
-    
-    
-    <table class="table">
-      <thead>
-        <tr>
-          
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-          <th scope="col">#</th>
-          
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>{{trainerDetail.trainerId}}</td>
-          <td>{{trainerDetail.trainerName}}</td>
-          <td>{{trainerDetail.trainerSurname}}</td>
-        <td>{{trainerDetail.trainerPhone}}</td>
-        <td>{{trainerDetail.trainerEmail}}</td>
-        <td>{{trainerDetail.trainerDate}}</td>
-        <td>{{trainerDetail.trainerGender}}</td>
-        <td>{{trainerDetail.trainerBranch}}</td>
-        <td>{{trainerDetail.trainerSchool}}</td>
-        <td>{{trainerDetail.trainerAbout}}</td>
-        <td>{{trainerDetail.aboutLessInfo}}</td>
-        <td>{{trainerDetail.addressName}}</td>
-        <td>{{trainerDetail.trainerWage}}</td>
-        <td>{{trainerDetail.formOfEduName}}</td>
-      </tr>
-      
-    </tbody>
-  </table>
-  <div >
-    <img *ngFor="let image of trainerDetail.images" width="256" height="256" src="{{image ? 'data:image/jpg;base64,' + image : ''}}" alt="none">
-    <button *ngIf="authService.role=='trainer' || authService.role=='admin'" class="btn btn-warning me-2" (click)="navigateUpdate()">Güncelle</button>
-    <button type="button" class="btn btn-success me-2" *ngIf="authService.role=='admin'" (click)="navigateDelete()">Sil</button>
+  <div *ngIf="dataLoaded" >
+    <div class="row" > 
+      <div class="col-4">
+    <div class="card trainer-card" style="width: 18rem;">
+      <img *ngFor="let image of trainerDetail.images"  src="{{image ? 'data:image/jpg;base64,' + image : ''}}" alt="none">
+      <div class="card-body">
+        <h5 class="card-title" ><i class="fa-solid fa-user card-icon"></i>&nbsp; {{trainerDetail.trainerName}} &nbsp; {{trainerDetail.trainerSurname}}</h5>
+        <p class="card-text"><i class="fa-solid fa-envelope card-icon"></i> &nbsp; {{trainerDetail.trainerEmail}}</p>
+        <p class="card-text" ><i class="fa-solid fa-building-columns card-icon" ></i>{{trainerDetail.trainerSchool}}</p> 
+        <p class="card-text" ><b>{{trainerDetail.trainerBranch}}</b> Bölümü</p> 
+        <p   class="card-text " > Saatlik Ücret: <b> {{trainerDetail.trainerWage}}</b> <i class="fa-solid fa-turkish-lira-sign"></i> </p>
+       
+      </div>
+    </div>
   </div>
+  <div class="col-md-8">
+    <div class="card info" >
+      <div class="card-body">
+        <h5 class="card-title"><i class="fa-solid fa-circle-info"></i> &nbsp; Ders Hakkında </h5>
+        <p class="card-text">{{trainerDetail.aboutLessInfo}}</p>
+      
+      </div>
+    </div>
+     <div class="card info" >
+      <div class="card-body">
+        <h5 class="card-title"><i class="fa-solid fa-circle-info"></i> &nbsp; Eğitmen Hakkında </h5>
+        <p class="card-text">{{trainerDetail.trainerAbout}}</p>
+      
+      </div>
+    </div> 
+    <button *ngIf="authService.role=='trainer' || authService.role=='admin'" class="btn btn-update " (click)="navigateUpdate()"><i class="fa-solid fa-pen-nib"></i>Güncelle</button>
+    <button type="button" class="btn btn-delete " *ngIf="authService.role=='admin'" (click)="navigateDelete()"><i class="fa-solid fa-trash"></i>Sil</button>
+  </div>
+  </div>
+    
   
+ 
 </div>
+
 </body>
 
 
 
+
+<!-- //addressname, formOfEduName, eduName -->

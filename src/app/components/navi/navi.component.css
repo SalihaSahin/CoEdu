@@ -39,6 +39,7 @@ div.new-btn{
    background-color: #CC8264;
    color: #ffff;
 }
+/*Ekleme min-*/
 img.main-img{
       position: absolute;
       right:120px;
@@ -56,7 +57,7 @@ div.detail-btn{
 }
 div.detail-btn:hover{
    border:none;
-   background-color: #7f66d8;
+   background-color: #245E52;
    text-decoration: underline;
 }
 form.auth-btn button{
