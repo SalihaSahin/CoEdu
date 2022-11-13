@@ -1,9 +1,7 @@
-import { TrainerImageService } from './../../services/trainer-image.service';
-import { TrainerDetailService } from './../../services/trainer-detail.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { TrainerDetail } from './../../models/trainer-detail';
 import { FavItem } from './../../models/favItem';
-import { ToastrService } from 'ngx-toastr';
+
 import { FavService } from './../../services/fav.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -11,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-fav-trainer-list',
   templateUrl: './fav-trainer-list.component.html',
   styleUrls: ['./fav-trainer-list.component.css']
-})
+}) 
 export class FavTrainerListComponent implements OnInit {
   favItems:FavItem[]=[];
   trainerId: number;

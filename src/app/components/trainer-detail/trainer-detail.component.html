@@ -1,27 +1,37 @@
+<body class="container ">
+  
 
 <div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
     <span class="visually-hidden">Loading...</span>
   </div>
-  <div class="mb-3 mt-3">
-    <label for="filterText" class="form-label">Eğitmen ara</label>
+  <!-- <div class="mb-3 mt-3 search-trainer">
+    <label for="filterText" class="form-label">Eğitmen ara  </label>
     <input
         type="text"
         [(ngModel)]="filterText"
         class="form-control"
         id="filterText"
-        placeholder="Arama ifadesi giriniz"
+        placeholder="Arama ifadesi giriniz "
       />
-  </div>
-  <div *ngIf="filterText" class="alert alert-success">
-    {{filterText}} aradınız
-  </div>
-
-  <div class="row g-0">
-  <div *ngFor="let trainer of trainerDetails | filterPipe:filterText" class="card mx-2 mt-5" style="max-width: 440px;">
-      <div class="col-md-4 ">
-        <img src="{{trainer.images ? 'data:image/jpg;base64,' + trainer.images[0]: '...'}}" class="img-fluid rounded-start" alt="..."> -
+      </div> -->
+      <p class="search-txt">Eğitmen Ara</p>
+      <div class="input-group mb-3 mt-3 search-trainer">
+        <input type="text" class="form-control"  [(ngModel)]="filterText"    id="filterText"
+        placeholder="Arama ifadesi giriniz ">
+        <div class="input-group-append">
+          <button class="btn " type="button"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
+        </div>
       </div>
-     
+      
+  <!-- <div *ngIf="filterText" class="alert alert-success">
+    {{filterText}} aradınız
+  </div> -->
+
+  <div *ngFor="let trainer of trainerDetails | filterPipe:filterText"class="card  mb-3 mx-4 trainer-card" style="display: inline-block; max-width: 470px; ">
+    <div class="row g-0 ">
+      <div class="col-md-4 ">
+        <img src="{{trainer.images ? 'data:image/jpg;base64,' + trainer.images[0]: '...'}}" class="img-fluid tra-img " alt="..."> -
+      </div>
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">{{trainer.trainerName}} {{trainer.trainerSurname}}</h5>
@@ -30,16 +40,10 @@
           <p class="card-text"><small class="text-muted">{{trainer.addressName}}</small></p>
           <p class="card-text"><small class="text-muted">{{trainer.formOfEduName}}</small></p>
           <p class="card-text"><small class="text-muted">{{trainer.educationName}}</small></p>
-        <div  class="d-grid gap-2 d-md-flex justify-content-md-end">
-          <button *ngIf="authService.isAuthenticated()" routerLink="trainers/trainer/{{trainer.trainerId}}" class="btn btn-success">Detay</button>
-          <button (click)="addToFav(trainer)" type="button" class="btn btn-danger">Favorilere Ekle</button>
+          <button *ngIf="authService.isAuthenticated()" routerLink="/trainers/trainer/{{trainer.trainerId}}" class="btn detail-btn "><fa-icon [icon]="faCircleInfo"></fa-icon>&nbsp;Detay </button>
+          <button (click)="addToFav(trainer)" type="button" class="btn btn-fav"><fa-icon [icon]="faHeart"></fa-icon>&nbsp;Favorilere Ekle</button>
         </div>
-        </div>
-      </div>  
+      </div>
     </div>
   </div>
-<img src="../../../app/pictures/trainer.png" alt="">a
-
-<!-- 
- *ngFor="let trainer of trainers" (click)="setCurrentTrainer(trainer)" routerLink="trainerDetail/trainer/{{trainer.trainerId}}" type="button" 
-  [class]="getCurrentTrainerClass(trainer)" -->
+</body>

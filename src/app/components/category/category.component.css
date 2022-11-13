@@ -1,21 +1,23 @@
 li{
     border:none;
+    
 }
+
 li.x{ 
-    border: 1px solid#FFC09F;
-    border-radius: 40px ;
+   color: #ffff;
+   background-color: #245E52;
     margin-top: 50px;
     margin-bottom: 20px;
 }
 li:nth-child(2n + 1):hover{
-    background-color: #FFC09F;
+    background-color: #245E52;
     color: #ffff;
-    border-radius: 50px;
+    border-radius: 10px;
     border:none;
 }
 li:nth-child(2n):hover{
-    background-color: #35C145;
+    background-color: #245E52;
     color: #ffff;
-    border-radius: 50px;
+    border-radius: 10px;
     border:none;
 }

@@ -1,8 +1,8 @@
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { FormGroup, FormBuilder } from '@angular/forms';
 import { User } from './../../models/user';
 import { UserService } from './../../services/user.service';
-import { ToastrService } from 'ngx-toastr';
-import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,12 +12,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserUpdateComponent implements OnInit {
   userId: number;
-  userUpdateForm:UntypedFormGroup ;
+  userUpdateForm:FormGroup ;
   user: User;
   dataLoaded: boolean;
 
   constructor(
-    private formBuilder: UntypedFormBuilder,
+    private formBuilder: FormBuilder,
     private toastrService: ToastrService,
     private userService: UserService,
     private activatedRoute: ActivatedRoute,

@@ -1,19 +1,19 @@
-import { Validators } from '@angular/forms';
-import { EducationService } from './../../services/education.service';
+import { DatePipe } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { FormGroup, FormBuilder } from '@angular/forms';
+
+import { EducationService } from './../../services/education.service';
 import { FormOfEduService } from './../../services/form-of-edu.service';
 import { AddressService } from './../../services/address.service';
 import { TrainerService } from './../../services/trainer.service';
-import { UntypedFormBuilder } from '@angular/forms';
 import { Education } from './../../models/education';
 import { FormOfEdu } from './../../models/formOfEdu';
-import { UntypedFormGroup } from '@angular/forms';
+
 
 import { Address } from './../../models/address';
 import { Component, OnInit } from '@angular/core';
 import { Trainer } from 'src/app/models/trainer';
-import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-trainer-update',
@@ -27,10 +27,10 @@ export class TrainerUpdateComponent implements OnInit {
   educations:Education[]=[];
   trainerId:number;
   trainer:Trainer;
-  trainerUpdateForm: UntypedFormGroup;
+  trainerUpdateForm: FormGroup;
 
   constructor(
-    private formBuilder: UntypedFormBuilder,
+    private formBuilder: FormBuilder,
     private trainerService: TrainerService,
     private addressService: AddressService,
     private formOfEdusService: FormOfEduService,

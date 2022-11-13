@@ -1,12 +1,12 @@
-import { Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { AuthService } from './../../services/auth.service';
-import { UntypedFormBuilder } from '@angular/forms';
-import { TrainerService } from 'src/app/services/trainer.service';
 import { ToastrService } from 'ngx-toastr';
-import { UntypedFormGroup } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
+import { AuthService } from './../../services/auth.service';
+import { TrainerService } from 'src/app/services/trainer.service';
+
+import { Component, OnInit } from '@angular/core';
+ 
 @Component({
   selector: 'app-trainer-changepassword',
   templateUrl: './trainer-changepassword.component.html',
@@ -14,12 +14,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainerChangepasswordComponent implements OnInit {
 
-  updatePasswordForm:UntypedFormGroup;
+  updatePasswordForm:FormGroup;
 
   constructor(
     private toastrService: ToastrService,
     private trainerService:TrainerService,
-    private formBuilder: UntypedFormBuilder,
+    private formBuilder: FormBuilder,
     private authService:AuthService,
     private router:Router
   ) { }

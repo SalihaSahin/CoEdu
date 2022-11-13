@@ -1,4 +1,4 @@
-import { ToastrService } from 'ngx-toastr';
+
 import { FavItems } from './../models/favItems';
 import { TrainerDetail } from './../models/trainer-detail';
 import { Injectable } from '@angular/core';

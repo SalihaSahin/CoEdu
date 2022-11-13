@@ -1,3 +1,4 @@
+import { Routes, RouterModule } from '@angular/router';
 import { FavTrainerListComponent } from './components/fav-trainer-list/fav-trainer-list.component';
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
 import { TrainerDeleteComponent } from './components/trainer-delete/trainer-delete.component';
@@ -16,7 +17,7 @@ import { TrainerAddComponent } from './components/trainer-add/trainer-add.compon
 import { TrainerDetailComponent } from './components/trainer-detail/trainer-detail.component';
 import { TrainerComponent } from './components/trainer/trainer.component';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+
 
 const routes: Routes = [  
   //trainer

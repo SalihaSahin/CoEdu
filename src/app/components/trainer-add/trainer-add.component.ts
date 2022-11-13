@@ -1,4 +1,7 @@
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 import { TrainerImageService } from './../../services/trainer-image.service';
 import { Education } from 'src/app/models/education';
 import { EducationService } from './../../services/education.service';
@@ -6,15 +9,10 @@ import { FormOfEduService } from './../../services/form-of-edu.service';
 import { FormOfEdu } from './../../models/formOfEdu';
 import { Address } from 'src/app/models/address';
 import { AddressService } from 'src/app/services/address.service';
-import { ToastrService } from 'ngx-toastr';
+
 import { TrainerService } from './../../services/trainer.service';
 import { Trainer } from 'src/app/models/trainer';
 import { Component, OnInit } from '@angular/core';
-import {
-  UntypedFormGroup,
-  UntypedFormBuilder,
-  Validators,
-} from '@angular/forms';
 
 @Component({
   selector: 'app-trainer-add',
@@ -22,7 +20,7 @@ import {
   styleUrls: ['./trainer-add.component.css'],
 })
 export class TrainerAddComponent implements OnInit {
-  trainerAddForm: UntypedFormGroup;
+  trainerAddForm: FormGroup;
   addresses: Address[] = [];
   formOfEdus: FormOfEdu[] = [];
   educations: Education[] = [];
@@ -34,7 +32,7 @@ export class TrainerAddComponent implements OnInit {
     private educationService: EducationService,
     private formOfEduService: FormOfEduService,
     private addressService: AddressService,
-    private formBuilder: UntypedFormBuilder,
+    private formBuilder:FormBuilder,
     private trainerService: TrainerService,
     private toastrService: ToastrService,
     private router: Router

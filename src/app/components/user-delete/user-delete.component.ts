@@ -1,7 +1,7 @@
-import { UserImage } from './../../models/user-image';
-import { UserImageService } from './../../services/user-image.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { UserImage } from './../../models/user-image';
+import { UserImageService } from './../../services/user-image.service';
 import { UserService } from './../../services/user.service';
 import { User } from './../../models/user';
 import { Component, OnInit } from '@angular/core';

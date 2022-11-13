@@ -1,6 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { SingleResponseModel } from './../models/singleResponseModel';
 import { TrainerDetail } from './../models/trainer-detail';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';

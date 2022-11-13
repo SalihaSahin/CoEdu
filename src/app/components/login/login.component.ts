@@ -1,8 +1,9 @@
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import {UntypedFormGroup, Validators, UntypedFormBuilder  } from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -11,9 +12,9 @@ import {UntypedFormGroup, Validators, UntypedFormBuilder  } from "@angular/forms
 })
 export class LoginComponent implements OnInit {
 
-  loginForm:UntypedFormGroup
+  loginForm:FormGroup
   
-  constructor(private formBuilder:UntypedFormBuilder, 
+  constructor(private formBuilder:FormBuilder, 
     private authService:AuthService,
     private toastrService:ToastrService,
     private router:Router

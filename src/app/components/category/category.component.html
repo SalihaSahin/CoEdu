@@ -1,8 +1,12 @@
-<ul class="list-group ">
-  <li class="x" (click)=" setDeletedCurrentCategory() " routerLink="/" [class]="getAllTrainersClass()">Tüm Eğitmenler</li>
-    <li (click)="setCurrentAddress(address)" routerLink="/trainers/address/{{address.id}}" *ngFor="let address of addresses" [class]="getCurrentAddressClass(address)">{{address.addressName}}</li>
-    <li (click)="setCurrentEducation(education)" routerLink="/trainers/eductaion/{{education.id}}" *ngFor="let education of educations" [class]="getCurrentEducationClass(education)">{{education.eduName}}</li>
-    <li (click)="setCurrentFormOfEdu(formOfEdu)" routerLink="/trainers/formOfEdu/{{formOfEdu.id}}" *ngFor="let formOfEdu of formOfEdus" [class]="getCurrentFormOfEduClass(formOfEdu)">{{formOfEdu.formOfEduName}}</li>
-  </ul>
+
+  <ul class="list-group ">
+    <li class="x" (click)=" setDeletedCurrentCategory() " routerLink="/" [class]="getAllTrainersClass()"><fa-icon [icon]="faBookOpenReader" ></fa-icon>Tüm Eğitmenler</li>
+      <li (click)="setCurrentAddress(address)" routerLink="/trainers/address/{{address.id}}" *ngFor="let address of addresses" [class]="getCurrentAddressClass(address)"><fa-icon [icon]="faCircle"  class="mx-2"  style="color:#216052"></fa-icon>{{address.addressName}}</li>
+      <hr>
+      <li (click)="setCurrentEducation(education)" routerLink="/trainers/eductaion/{{education.id}}" *ngFor="let education of educations" [class]="getCurrentEducationClass(education)"><fa-icon class="mx-2" style="color:#D18663"  [icon]="faCircle"></fa-icon>{{education.eduName}}</li>
+      <hr>
+      <li (click)="setCurrentFormOfEdu(formOfEdu)" routerLink="/trainers/formOfEdu/{{formOfEdu.id}}" *ngFor="let formOfEdu of formOfEdus" [class]="getCurrentFormOfEduClass(formOfEdu)"><fa-icon class="mx-2" style="color:#F0E8DB" [icon]="faCircle"></fa-icon>{{formOfEdu.formOfEduName}}</li>
+    </ul>
+
 
 

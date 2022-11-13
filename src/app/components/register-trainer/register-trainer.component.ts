@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,10 +10,10 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./register-trainer.component.css']
 })
 export class RegisterTrainerComponent implements OnInit {
-  registerTrainerForm:UntypedFormGroup;
+  registerTrainerForm:FormGroup;
 
   constructor(
-    private formBuilder: UntypedFormBuilder,
+    private formBuilder: FormBuilder,
     private toastrService: ToastrService,
     private router: Router,
     public authService: AuthService

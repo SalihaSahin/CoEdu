@@ -1,8 +1,8 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { TrainerDetailService } from './../../services/trainer-detail.service';
 import { TrainerDetail } from './../../models/trainer-detail';
 import { TrainerImageService } from './../../services/trainer-image.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({

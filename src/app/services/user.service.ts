@@ -1,10 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { UserChangePassword } from './../models/userchangePassword';
 import { UserDetailModel } from './../models/user-detail';
 import { ResponseModel } from './../models/responseModel';
 import { SingleResponseModel } from './../models/singleResponseModel';
 import { Observable } from 'rxjs';
 import { User } from './../models/user';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ListResponseModel } from '../models/listResponseModel';
 import { UserCreate } from '../models/userCreate';

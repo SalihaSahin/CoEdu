@@ -1,13 +1,14 @@
-import { LoginTrainer } from './../models/login-trainer';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { TokenModel } from './../models/tokenModel';
+import { ToastrService } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
+import { LoginTrainer } from './../models/login-trainer';
+import { TokenModel } from './../models/tokenModel';
+
 import { LoginModel } from './../models/loginModel';
 import { Injectable } from '@angular/core';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { RegisterModel } from '../models/register';
 import { Observable } from 'rxjs';
-import { ToastrService } from 'ngx-toastr';
 import { RegisterTrainerModel } from '../models/register-trainer';
 
 

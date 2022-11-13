@@ -5,14 +5,16 @@ import { Component, OnInit } from '@angular/core';
 import { Address } from 'src/app/models/address';
 import { AddressService } from 'src/app/services/address.service';
 import { Education } from 'src/app/models/education';
-
-@Component({
+import {faBookOpenReader, faCircle } from '@fortawesome/free-solid-svg-icons';
+@Component({ 
   selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css']
 })
 export class CategoryComponent implements OnInit {
-
+  faBookOpenReader=faBookOpenReader;
+  faCircle=faCircle;
+  
   addresses:Address[]=[];
   educations: Education[]=[];
   formOfEdus:FormOfEdu[]=[];

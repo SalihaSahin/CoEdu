@@ -1,8 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { ResponseModel } from './../models/responseModel';
 import { UserImage } from './../models/user-image';
 import { ListResponseModel } from './../models/listResponseModel';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({

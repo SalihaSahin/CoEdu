@@ -1,4 +1,4 @@
-<body>
+
 <li *ngIf="favItems" class="nav-item dropdown">
   <a
     class="nav-link dropdown-toggle rounded-pill"
@@ -15,13 +15,13 @@
       <a class="dropdown-item"
         ><div  routerLink="trainers/trainer/{{favItem.trainerDetail.trainerId}}"><span class="badge text-bg-secondary"></span
         >{{ favItem.trainerDetail.trainerName }}
-        {{ favItem.trainerDetail.trainerSurname }}<span> : </span>
+        {{ favItem.trainerDetail.trainerSurname }}<span>: </span>
         {{ favItem.trainerDetail.educationName }} <span>(</span
         >{{ favItem.trainerDetail.trainerBranch }} <span>)</span
         ></div><button type="btn" 
           (click)="removeFromFav(favItem.trainerDetail)"
           class="  btn btn-outline-danger delete"
-          >Sil</button
+          ><fa-icon [icon]="faTrash"></fa-icon></button
         ></a
       >
     </li>
@@ -30,4 +30,4 @@
   </ul>
 </li>
   
-</body>
+

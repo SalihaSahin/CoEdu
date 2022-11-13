@@ -1,13 +1,7 @@
-a.nav-link:hover{
-    color:#35C145;
-    border: 0.5px solid #35C145;
-    border-radius: 30px;
-}
-/* button.delete{
-    font-size: 15px;
-} */
-a.fav-go{
-    color:#35C145;
-    
-}
 
+.nav-item a{
+    color: #fff;
+}
+.nav-item a:hover{
+    color:#CC8264;
+}

@@ -1,7 +1,7 @@
-<body>
+<body >
 <nav class="navbar navbar-expand-lg ">
-  <div class="container-fluid">
-    <a class="navbar-brand"><img src="../../../assets/image/logo.png" width="25%" alt=""> <b>CLRFULEDU</b>    </a>
+  <div class="container">
+    <a class="navbar-brand "><img src="../../../assets/image/logo.png" width="50px" alt="" > <p class="logo-name" style=" display:inline-block;"> <b >duca.</b></p>  </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -16,12 +16,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active btn rounded-pill" aria-current="page" href="">Ana Sayfa </a>
+          <a class="nav-link  " aria-current="page" href="">Ana Sayfa </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn rounded-pill "  aria-current="page" href="" >Hakkımızda</a>
+          <a class="nav-link  "  aria-current="page" href="" >Hakkımızda</a>
         </li>
-<li>
+<li class="nav-item">
   <app-fav-summary></app-fav-summary>
 </li>
 
@@ -29,16 +29,16 @@
       </ul>
 
       <div *ngIf="!isAuthenticated()">
-        <form class="d-flex">
+        <form class="d-flex auth-btn">
           <button
-            class="btn btn-outline-dark rounded-pill"
+            class="btn "
             type="submit"
             (click)="login()"
           >
             Giriş Yap
           </button>
           <button
-            class="btn btn-outline-dark  rounded-pill"
+            class="btn  "
             type="submit"
             (click)="register()"
           >
@@ -47,7 +47,7 @@
         </form>
       </div>
       <div class="dropdown" *ngIf="isAuthenticated()">
-        <a class="btn rounded-pill userNameBox dropdown-toggle"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <a class=" userNameBox dropdown-toggle nav-link"  role="button" data-bs-toggle="dropdown" aria-expanded="false"><fa-icon [icon]="faUser"></fa-icon>
           {{ authService.fullName }}
         </a>
        <ul *ngIf="authService.role=='admin'" class="dropdown-menu">
@@ -74,5 +74,18 @@
     </div>
   </div>
 </nav>
-<hr class="navi-line">
+<div class="container  main-text">
+  <div class="btn rounded-pill new-btn">New</div>
+  <hr>
+  <h1 class="my-4"> <b>Becerilerinizi Geliştirmenin <br>Yeni ve Farklı Bir Yolu</b></h1>
+  <h5 class="my-3">Evden çalışma trendi en doğru yöntem olabilir</h5>
+  <p>Educa , eğitim kurslarında uzmanlaşmış , bir çok farklı alanda <br> ulaşılabilecek pek çok sayıda eğitmenlerle Türkiye merkezli küresel bir eğitim sağlayıcısıdır.</p>
+  <div class="detail-btn btn" ><fa-icon [icon]="faAnglesRight"></fa-icon> Daha Fazla Öğren</div>
+  <img src="../../../assets/image/main-img.png" alt="" class="main-img">
+  <img src="../../../assets/image/group.png" alt="" width="15%" class="main-img-group">
+</div>
+<div class="container box">
+ <h5 class=" promise"> "Bir mermer parçası için heykel traş ne ise ruh içinde eğitim odur."</h5>
+ <p class="writer">-Thomas Edison</p>
+</div>
 </body>

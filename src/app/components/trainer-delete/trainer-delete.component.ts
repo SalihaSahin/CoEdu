@@ -1,8 +1,9 @@
+import { Router, ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { TrainerImageService } from './../../services/trainer-image.service';
 import { TrainerImage } from './../../models/trainer-image';
-import { Router, ActivatedRoute } from '@angular/router';
 import { Trainer } from 'src/app/models/trainer';
-import { ToastrService } from 'ngx-toastr';
+
 import { TrainerService } from 'src/app/services/trainer.service';
 import { Component, OnInit } from '@angular/core';
 

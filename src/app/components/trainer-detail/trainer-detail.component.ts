@@ -1,14 +1,15 @@
+import { ToastrService } from 'ngx-toastr';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 import { FavService } from './../../services/fav.service';
 import { TrainerImageService } from './../../services/trainer-image.service';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TrainerDetailService } from './../../services/trainer-detail.service';
 import { TrainerDetail } from './../../models/trainer-detail';
 import { Component, OnInit } from '@angular/core';
 import { Trainer } from 'src/app/models/trainer';
-import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/services/auth.service';
+import { faCircleInfo, faHeart, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-trainer-detail',
@@ -16,6 +17,11 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./trainer-detail.component.css'],
 })
 export class TrainerDetailComponent implements OnInit {
+ 
+  faCircleInfo=faCircleInfo;
+  faHeart=faHeart;
+  faMagnifyingGlass=faMagnifyingGlass;
+  
   trainerDetail: TrainerDetail;
   trainerDetails: TrainerDetail[] = [];
   trainer: Trainer[] = [];

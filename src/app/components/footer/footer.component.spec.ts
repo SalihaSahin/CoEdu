@@ -1,20 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FavSummaryComponent } from './fav-summary.component';
+import { FooterComponent } from './footer.component';
 
-describe('FavSummaryComponent', () => {
-  let component: FavSummaryComponent;
-  let fixture: ComponentFixture<FavSummaryComponent>;
+describe('FooterComponent', () => {
+  let component: FooterComponent;
+  let fixture: ComponentFixture<FooterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FavSummaryComponent ]
+      declarations: [ FooterComponent ]
     })
     .compileComponents();
-  });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(FavSummaryComponent);
+    fixture = TestBed.createComponent(FooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

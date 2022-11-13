@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { TrainerChangePassword } from './../models/trainerchangePassword';
 import { UserChangePassword } from './../models/userchangePassword';
 import { TrainerCreate } from './../models/trainerCreate';
@@ -6,7 +7,6 @@ import { SingleResponseModel } from './../models/singleResponseModel';
 import { ResponseModel } from './../models/responseModel';
 import { Trainer } from 'src/app/models/trainer';
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 import { ListResponseModel } from '../models/listResponseModel';

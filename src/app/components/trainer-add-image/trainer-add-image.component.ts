@@ -1,7 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { TrainerImageService } from './../../services/trainer-image.service';
 import { Component, OnInit } from '@angular/core';
-
+ 
 @Component({
   selector: 'app-trainer-add-image',
   templateUrl: './trainer-add-image.component.html',

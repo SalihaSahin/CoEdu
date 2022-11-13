@@ -5,13 +5,17 @@ import { UserService } from './../../services/user.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { TrainerService } from 'src/app/services/trainer.service';
-
+import {faUser, faAnglesRight} from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-navi',
   templateUrl: './navi.component.html',
   styleUrls: ['./navi.component.css'],
 })
 export class NaviComponent implements OnInit {
+  
+  faUser=faUser;
+  faAnglesRight=faAnglesRight;
+  
   trainerId: number;
   userId: number;
   trainer: Trainer;

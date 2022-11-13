@@ -1,9 +1,8 @@
-import { Validators } from '@angular/forms';
-import { UntypedFormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+
 import { UserService } from './../../services/user.service';
-import { UntypedFormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,12 +11,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-add.component.css']
 })
 export class UserAddComponent implements OnInit {
-userAddForm:UntypedFormGroup;
+userAddForm:FormGroup;
 
   constructor(
     private userService:UserService,
     private router:Router,
-    private formBuilder:UntypedFormBuilder,
+    private formBuilder:FormBuilder,
     private toastrService:ToastrService
 
   ) { }

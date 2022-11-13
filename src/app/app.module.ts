@@ -1,4 +1,5 @@
 import { AppRoutingModule } from './app-routing.module';
+
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -42,6 +43,7 @@ import { TrainerDeleteComponent } from './components/trainer-delete/trainer-dele
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
 import { FavTrainerListComponent } from './components/fav-trainer-list/fav-trainer-list.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 export function tokenGetter() {
@@ -73,7 +75,8 @@ export function tokenGetter() {
     TrainerChangepasswordComponent,
     TrainerDeleteComponent,
     UserDeleteComponent,
-    FavTrainerListComponent
+    FavTrainerListComponent,
+    FooterComponent
 
     
   ],
