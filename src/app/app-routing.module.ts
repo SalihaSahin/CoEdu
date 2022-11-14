@@ -1,3 +1,4 @@
+import { AboutUsComponent } from './components/about-us/about-us.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FavTrainerListComponent } from './components/fav-trainer-list/fav-trainer-list.component';
 import { UserDeleteComponent } from './components/user-delete/user-delete.component';
@@ -46,6 +47,7 @@ const routes: Routes = [
    {path:"users/user/userchangepassword/:userId" , component:UserChangepasswordComponent},
    {path:"users/delete/:userId", component:UserDeleteComponent},
 
+   {path:"aboutus", component:AboutUsComponent}
   ];
   
 @NgModule({

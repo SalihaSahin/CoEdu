@@ -1,64 +1,66 @@
 <div class="content">
-  <div class="col-md-12">
-    <div class="card">
-      <div class="card-header">
-        <h5 class="title">Kullanıcı Ekle</h5>
+  <div class="col-md-12 mt-4" >
+    <div class="card form-card " >
+      <div class="">
+        <h5 class="title add-title"><i class="fa-sharp fa-solid fa-user-plus"></i> Kullanıcı Ekle</h5>
+      <hr>
       </div>
       <div class="card-body">
         <form [formGroup]="userAddForm">
           <div class="mb-3">
-            <label for="userName">Eğitmen Adı</label>
+            <label for="userName">Kullanıcı Adı</label>
             <div class="form-group">
               <input
                 type="text"
                 id="userName"
                 formControlName="userName"
                 class="form-control"
-                placeholder="Eğitmen Adı"
+                placeholder="Kullanıcı Adı"
               />
             </div>
           </div>
           <div class="mb-3">
-            <label for="userSurname">Eğitmen Soyadı</label>
+            <label for="userSurname">Kullanıcı Soyadı</label>
             <div class="form-group">
               <input
                 type="text"
                 id="userSurname"
                 formControlName="userSurname"
                 class="form-control"
-                placeholder="Eğitmen Soyadı"
+                placeholder="Kullanıcı Soyadı"
               />
             </div>
           </div>
 
           <div class="mb-3">
-            <label for="userEmail">Eğitmen Email</label>
+            <label for="userEmail">Kullanıcı Email</label>
             <div class="form-group">
               <input
                 type="email"
                 id="userEmail"
                 formControlName="userEmail"
                 class="form-control"
-                placeholder="Eğitmen Email"
+                placeholder="Kullanıcı Email"
               />
             </div>
           </div>
           <div class="mb-3">
-            <label for="userPassword">Eğitmen Şifre</label>
+            <label for="userPassword">Kullanıcı Şifre</label>
             <div class="form-group">
               <input
                 type="password"
                 id="userPassword"
                 formControlName="userPassword"
                 class="form-control"
-                placeholder="Eğitmen Şifre"
+                placeholder="Kullanıcı Şifre"
               />
             </div>
           </div>
         </form>
       </div>
-      <div class="card-footer">
-        <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
+      <div class="text-end">
+        <button class="btn btn-add mx-3" (click)="add()">Ekle</button>
+        <button class="btn btn-back " routerLink="/">Geri</button>
       </div>
     </div>
   </div>

@@ -1,5 +1,11 @@
+<h5><i class="fa-solid fa-images"></i> &nbsp; Profil Fotoğrafı Düzenle</h5>
+    <div class="row  mt-5">
+<div class="col-md-4">
+<img *ngIf="filePreview" width="100%" src="{{filePreview ? filePreview : ''}}" alt="none">
+</div>
+<div class="col-md-6 mt-3">
 <input class="form-control" type="file" name="file" id="file" (change)="onFileChange($event)">
-
-<img *ngIf="filePreview" width="256" height="256" src="{{filePreview ? filePreview : ''}}" alt="none">
-<input class="btn btn-primary" type="button" (click)="uploadImage()" value="Kaydet">
-<input class="btn btn-primary" type="button" routerLink="/" value="Geç">
+<input class="btn mt-3 btn-save " type="button" (click)="uploadImage()" value="Kaydet">
+<input class="btn mt-3 btn-next mx-3" type="button" routerLink="/" value="Geç">
+</div>
+</div>

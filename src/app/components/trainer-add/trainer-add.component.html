@@ -1,11 +1,14 @@
 <div class="content">
-  <div class="col-md-12">
-    <div class="card">
-      <div class="card-header">
-        <h5 class="title">Eğitmen Ekle</h5>
+  <div class="col-md-12 mt-4">
+    <div class="card form-card">
+      <div class="">
+        <h5 class="title add-title"><i class="fa-sharp fa-solid fa-user-plus"></i>Eğitmen Ekle</h5>
+        <hr>
       </div>
       <div class="card-body">
         <form [formGroup]="trainerAddForm">
+          <div class="row">
+            <div class="col-md-3">
           <div class="mb-3">
             <label for="trainerName">Eğitmen Adı</label>
             <div class="form-group">
@@ -114,32 +117,40 @@
               />
             </div>
           </div>
+          </div>
+          <div class="col-md-9">
           <div class="mb-3">
             <label for="trainerAbout">Eğitmen Hakkında</label>
             <div class="form-group">
-              <input
+              <textarea
                 type="text"
                 id="trainerAbout"
                 formControlName="trainerAbout"
                 class="form-control"
                 placeholder="Eğitmen Hakkında"
-              />
+                rows="5"
+                cols="60"
+              ></textarea>
             </div>
           </div>
           <div class="mb-3">
             <label for="aboutLessInfo">Ders Hakkında</label>
             <div class="form-group">
-              <input
+              <textarea
                 type="text"
                 id="aboutLessInfo"
                 formControlName="aboutLessInfo"
                 class="form-control"
                 placeholder="Ders Hakkında.."
-              />
+                rows="5"
+                cols="6"
+              ></textarea>
             </div>
           </div>
+          <div class="row">
+            <div class="col-md-4">
           <div class="mb-3">
-            <label for="addressId">Adres</label>
+            <label for="addressId">Seç</label>
             <div class="form-group">
               <select
                 [(ngModel)]="selectedAddress"
@@ -170,8 +181,10 @@
               />
             </div>
           </div>
+        </div>
+          <div class="col-md-4 ">
           <div class="mb-3">
-            <label for="formOfEduId">Adres</label>
+            <label for="formOfEduId">Seç</label>
             <div class="form-group">
               <select
                 [(ngModel)]="selectedFormOfEdu"
@@ -190,7 +203,7 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="educationId">Adres</label>
+            <label for="educationId">Alan Seç</label>
             <div class="form-group">
               <select
                 [(ngModel)]="selectedEducation"
@@ -208,17 +221,25 @@
               </select>
             </div>
           </div>
+        </div>
+        
+          
+        <div class="text-end">
+          <button class="btn btn-add mx-3" (click)="add()">Ekle</button>
+          <button class="btn btn-back " routerLink="/">Geri</button>
+        </div>
           <!-- <div class="mb-3">
             <label for="file">Image</label>
             <div class="form-group">
               <input type="file" name="file" id="file" class="form-control" formControlName="file">
             </div>
           </div> -->
+          </div>
+          </div>
+          </div>
         </form>
       </div>
-      <div class="card-footer">
-        <button class="btn btn-fill btn-primary" (click)="add()">Ekle</button>
-      </div>
+     
     </div>
   </div>
 </div>

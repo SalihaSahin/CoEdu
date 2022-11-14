@@ -1,0 +1,28 @@
+div.card{
+    border: none;
+    box-shadow: 2px 2px 7px rgb(182, 182, 182);
+    margin-top: 40px;
+}
+.btn-delete{
+  
+    background-color:#14463A ;
+    border-color:#14463A ;
+    color: #fff;
+ 
+}
+.btn-delete:hover{
+background-color: #fff;
+color: #14463A;
+}
+.btn-cancel:hover{
+  
+    background-color:#ffff ;
+    border-color:#C78561 ;
+    color: #C78561;
+ 
+}
+.btn-cancel{
+    background-color: #C78561;
+    color: #ffff;
+    
+}

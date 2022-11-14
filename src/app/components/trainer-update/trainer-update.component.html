@@ -1,164 +1,272 @@
 <div class="content">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="card-header">
-                <h5 class="title"> Güncelle</h5>
-            </div>
-            <div class="card-body">
-                <form [formGroup]="trainerUpdateForm">
-                    <div class="mb-3">
-                    <label for="trainerName">Eğitmen Adı</label>
-                    <div class="form-group">
-                        <input type="text" id="trainerName" 
-                        formControlName="trainerName" class="form-control" 
-                        placeholder="Eğitmen Adı" />
-                    </div>
+  <div class="col-md-12">
+    <div class="card form-card">
+      <div class="">
+        <h5 class="title update-title">
+          <i class="fa-solid fa-pen-nib"></i> <b>Güncelle</b>
+        </h5>
+        <hr />
+      </div>
+      <div class="card-body">
+        <form [formGroup]="trainerUpdateForm">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="mb-3">
+                <label for="trainerName">Eğitmen Adı</label>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="trainerName"
+                    formControlName="trainerName"
+                    class="form-control"
+                    placeholder="Eğitmen Adı"
+                  />
                 </div>
-                <div class="mb-3">
-                    <label for="trainerName">Eğitmen Soyadı</label>
-                    <div class="form-group">
-                        <input type="text" id="trainerSurname" 
-                        formControlName="trainerSurname" class="form-control" 
-                        placeholder="Eğitmen Soyadı" />
-                    </div>
+              </div>
+              <div class="mb-3">
+                <label for="trainerName">Eğitmen Soyadı</label>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="trainerSurname"
+                    formControlName="trainerSurname"
+                    class="form-control"
+                    placeholder="Eğitmen Soyadı"
+                  />
                 </div>
-                <div class="mb-3">
-                    <label for="trainerPhone">Eğitmen Tlf</label>
-                    <div class="form-group">
-                        <input type="text" id="trainerPhone" 
-                        formControlName="trainerPhone" class="form-control" 
-                        placeholder="Eğitmen Tlf" />
-                    </div>
+              </div>
+              <div class="mb-3">
+                <label for="trainerPhone">Eğitmen Telefonu</label>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="trainerPhone"
+                    formControlName="trainerPhone"
+                    class="form-control"
+                    placeholder="Eğitmen Tlf"
+                  />
                 </div>
-                <div class="mb-3">
-                    <label for="trainerEmail">Eğitmen Email</label>
-                    <div class="form-group">
-                        <input type="email" id="trainerEmail" 
-                        formControlName="trainerEmail" class="form-control" 
-                        placeholder="Eğitmen Email" />
-                    </div>
+              </div>
+              <div class="mb-3">
+                <label for="trainerEmail">Eğitmen Email</label>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="trainerEmail"
+                    formControlName="trainerEmail"
+                    class="form-control"
+                    placeholder="Eğitmen Email"
+                  />
                 </div>
-                 <div class="mb-3" hidden>
-                    <label for="trainerPasswordSalt">Eğitmen Şifre</label>
-                    <div class="form-group">
-                        <input type="password" id="trainerPasswordSalt" 
-                        formControlName="trainerPasswordSalt" class="form-control" 
-                        placeholder="Eğitmen Şifre" />
-                    </div>
+              </div>
+              <div class="mb-3" hidden>
+                <label for="trainerPasswordSalt">Eğitmen Şifre</label>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    id="trainerPasswordSalt"
+                    formControlName="trainerPasswordSalt"
+                    class="form-control"
+                    placeholder="Eğitmen Şifre"
+                  />
                 </div>
-                <div class="mb-3" hidden>
-                    <label for="trainerPasswordHash">Eğitmen Şifre</label>
-                    <div class="form-group">
-                        <input type="password" id="trainerPasswordHash" 
-                        formControlName="trainerPasswordHash" class="form-control" 
-                        placeholder="Eğitmen Şifre" />
-                    </div>
+              </div>
+              <div class="mb-3" hidden>
+                <label for="trainerPasswordHash">Eğitmen Şifre</label>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    id="trainerPasswordHash"
+                    formControlName="trainerPasswordHash"
+                    class="form-control"
+                    placeholder="Eğitmen Şifre"
+                  />
                 </div>
-                <div class="mb-3" hidden>
-                    <label for="status">Eğitmen Şifre</label>
-                    <div class="form-group">
-                        <input type="password" id="status" 
-                        formControlName="status" class="form-control" 
-                        placeholder="Eğitmen Şifre" />
-                    </div>
+              </div>
+              <div class="mb-3" hidden>
+                <label for="status">Eğitmen Şifre</label>
+                <div class="form-group">
+                  <input
+                    type="password"
+                    id="status"
+                    formControlName="status"
+                    class="form-control"
+                    placeholder="Eğitmen Şifre"
+                  />
                 </div>
-                <div class="mb-3">
-                    <label for="trainerDate">Eğitmen Doğum Tarihi</label>
-                    <div class="form-group">
-                        <input type="date" id="trainerDate" 
-                        formControlName="trainerDate" class="form-control" 
-                        placeholder="Eğitmen Doğum Tarihi" />
-                    </div>
+              </div>
+              <div class="mb-3">
+                <label for="trainerDate">Eğitmen Doğum Tarihi</label>
+                <div class="form-group">
+                  <input
+                    type="date"
+                    id="trainerDate"
+                    formControlName="trainerDate"
+                    class="form-control"
+                    placeholder="Eğitmen Doğum Tarihi"
+                  />
                 </div>
-                <div class="mb-3">
-                    <label for="trainerGender">Eğitmen Cinsiyet</label>
-                    <div class="form-group">
+              </div>
+              <div class="mb-3">
+                <label for="trainerGender">Eğitmen Cinsiyet</label>
+                <select
+                  class="form-select"
+                  id="trainerGender"
+                  formControlName="trainerGender"
+                  aria-label="Default select example"
+                  placeholder="Eğitmen Cinsiyet"
+                >
+                  <option value="1">Kadın</option>
+                  <option value="2">Erkek</option>
+                </select>
+                <!-- <div class="form-group">
                         <input type="text" id="trainerGender" 
                         formControlName="trainerGender" class="form-control" 
                         placeholder="Eğitmen Cinsiyet" />
-                    </div>
+                    </div> -->
+              </div>
+              <div class="mb-3">
+                <label for="trainerBranch">Eğitmen Branşı</label>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="trainerBranch"
+                    formControlName="trainerBranch"
+                    class="form-control"
+                    placeholder="Eğitmen Branşı"
+                  />
                 </div>
-                <div class="mb-3">
-                    <label for="trainerBranch">Eğitmen Branşı</label>
-                    <div class="form-group">
-                        <input type="text" id="trainerBranch" 
-                        formControlName="trainerBranch" class="form-control" 
-                        placeholder="Eğitmen Branşı" />
-                    </div>
+              </div>
+              <div class="mb-3">
+                <label for="trainerSchool">Eğitmen Mezun Okulu</label>
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="trainerSchool"
+                    formControlName="trainerSchool"
+                    class="form-control"
+                    placeholder="Eğitmenin Mezun Okulu"
+                  />
                 </div>
-                <div class="mb-3">
-                    <label for="trainerSchool">EğitmenMezun Okulu</label>
-                    <div class="form-group">
-                        <input type="text" id="trainerSchool" 
-                        formControlName="trainerSchool" class="form-control" 
-                        placeholder="Eğitmenin Mezun Okulu" />
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="trainerAbout">Eğitmen Hakkında</label>
-                    <div class="form-group">
-                        <input type="text" id="trainerAbout" 
-                        formControlName="trainerAbout" class="form-control" 
-                        placeholder="Eğitmen Hakkında" />
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="aboutLessInfo">Ders Hakkında</label>
-                    <div class="form-group">
-                        <input type="text" id="aboutLessInfo" 
-                        formControlName="aboutLessInfo" class="form-control" 
-                        placeholder="Ders Hakkında.." />
-                    </div>
-                </div>
-                <div class="mb-3">
-                    <label for="addressId">Adres</label>
-                    <div class="form-group">
-                              <select  id="addressId" class="form-control" formControlName="addressId" class="form-select">
-                                <option value="0">Seç</option>
-                                <option *ngFor="let address of addresses" [ngValue]="address.id">
-                                  {{address.addressName}}
-                                </option>
-                              </select>
-                    </div>
-                    </div>
+              </div>
+            </div>
 
-                <div class="mb-3">
+            <div class="col-md-9">
+              <div class="mb-3">
+                <label for="trainerAbout">Eğitmen Hakkında</label>
+                <div class="form-group">
+                  <textarea
+                    type="text"
+                    id="trainerAbout"
+                    formControlName="trainerAbout"
+                    rows="5"
+                    cols="60"
+                    class="form-control"
+                    placeholder="Eğitmen Hakkında"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="aboutLessInfo">Ders Hakkında</label>
+                <div class="form-group">
+                  <textarea
+                    type="text"
+                    rows="5"
+                    cols="60"
+                    id="aboutLessInfo"
+                    formControlName="aboutLessInfo"
+                    class="form-control"
+                    placeholder="Ders Hakkında.."
+                  >
+                  </textarea>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="mb-3">
+                    <label for="addressId">Seç</label>
+                    <div class="form-group">
+                      <select
+                        id="addressId"
+                        class="form-control"
+                        formControlName="addressId"
+                        class="form-select"
+                      >
+                        <option value="0">Seç</option>
+                        <option
+                          *ngFor="let address of addresses"
+                          [ngValue]="address.id"
+                        >
+                          {{ address.addressName }}
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
                     <label for="trainerWage">Saatlik Ücret</label>
                     <div class="form-group">
-                        <input type="number" id="trainerWage" 
-                        formControlName="trainerWage" class="form-control" 
-                        placeholder="Saatlik Ücret" />
+                      <input
+                        type="number"
+                        id="trainerWage"
+                        formControlName="trainerWage"
+                        class="form-control"
+                        placeholder="Saatlik Ücret"
+                      />
                     </div>
+                  </div>
                 </div>
-                <div class="mb-3">
-                    <label for="formOfEduId">Adres</label>
+                <div class="col-md-4">
+                  <div class="mb-3">
+                    <label for="formOfEduId">Seç</label>
                     <div class="form-group">
-                              <select id="formOfEduId" class="form-control" formControlName="formOfEduId" class="form-select">
-                                <option value="0">Seç</option>
-                                <option *ngFor="let formOfEdu of formOfEdus" [ngValue]="formOfEdu.id">
-                                  {{formOfEdu.formOfEduName}}
-                                </option>
-                              </select>
+                      <select
+                        id="formOfEduId"
+                        class="form-control"
+                        formControlName="formOfEduId"
+                        class="form-select"
+                      >
+                        <option value="0">Seç</option>
+                        <option
+                          *ngFor="let formOfEdu of formOfEdus"
+                          [ngValue]="formOfEdu.id"
+                        >
+                          {{ formOfEdu.formOfEduName }}
+                        </option>
+                      </select>
                     </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="educationId">Alan Seç</label>
+                    <div class="form-group">
+                      <select
+                        id="educationId"
+                        class="form-control"
+                        formControlName="educationId"
+                        class="form-select"
+                      >
+                        <option value="0">Seç</option>
+                        <option
+                          *ngFor="let education of educations"
+                          [ngValue]="education.id"
+                        >
+                          {{ education.eduName }}
+                        </option>
+                      </select>
                     </div>
-                    <div class="mb-3">
-                        <label for="educationId">Adres</label>
-                        <div class="form-group">
-                                  <select id="educationId" class="form-control" formControlName="educationId" class="form-select">
-                                    <option value="0">Seç</option>
-                                    <option *ngFor="let education of educations" [ngValue]="education.id">
-                                      {{education.eduName}}
-                                    </option>
-                                  </select>
-                        </div>
-                        </div>
-                </form>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="card-footer">
-                <button class="btn btn-fill btn-primary" (click)="updateTrainer()">Güncelle</button>
-                <button class="btn btn-fill btn-danger mb-2 me-2 " routerLink="/trainers">İptal</button>
-            </div>
+          </div>
+        </form>
+      </div>
+      <div class="">
+        <button class="btn btn-update mx-3" (click)="updateTrainer()">
+          Güncelle
+        </button>
+        <button class="btn btn-delete" routerLink="/">X İptal</button>
+      </div>
     </div>
+  </div>
 </div>
-</div>
-

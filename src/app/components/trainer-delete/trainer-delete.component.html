@@ -1,25 +1,76 @@
-<div *ngIf="dataLoaded" class="card">
-   
-    <div class="card-header">
-        
-        <div class="d-flex justify-content-between">
-            <h5>{{trainer.trainerName}} {{trainer.trainerSurname}} Eğitmeni Sil</h5>
-          
-        </div>
-  
+<!-- <div *ngIf="dataLoaded" class="card">
+  <div class="card-header">
+    <div class="d-flex justify-content-between">
+      <h5>
+        {{ trainer.trainerName }} {{ trainer.trainerSurname }} Eğitmeni Sil
+      </h5>
     </div>
-    <div class="card-body">
-        <strong>{{trainer.trainerId}}</strong> id değerine sahip <strong>{{trainer.trainerName}} {{trainer.trainerSurname}}</strong> aracını silmek istediğinizden emin misiniz?<br>
-        
+  </div>
+  <div class="card-body">
+    <strong>{{ trainer.trainerId }}</strong> id değerine sahip
+    <strong>{{ trainer.trainerName }} {{ trainer.trainerSurname }}</strong>
+    aracını silmek istediğinizden emin misiniz?<br />
+
+    <div class="row mt-3">
+      <div class="d-flex justify-content-end">
+        <button (click)="delete()" type="button" class="btn btn-success me-2">
+          Sil
+        </button>
+        <button
+          (click)="closeTrainerDeleteModal()"
+          type="button"
+          class="btn btn-danger"
+        >
+          İptal
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="dataLoaded">
+  <img
+    *ngFor="let image of trainer.images"
+    width="256"
+    height="256"
+    src="{{ image ? 'data:image/jpg;base64,' + image : '' }}"
+    alt="none"
+  />
+</div> -->
+<div *ngIf="dataLoaded" class="card ">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img
+        *ngFor="let image of trainer.images"
+        src="{{ image ? 'data:image/jpg;base64,' + image : '' }}"
+        alt="none"
+        class="img-fluid rounded-start"
+      />
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <p class="card-text">
+          <b> {{ trainer.trainerName }} {{ trainer.trainerSurname }}</b> adlı
+          eğitmeni silmek istediğinize emin misiniz?
+        </p>
         <div class="row mt-3">
-            <div class="d-flex justify-content-end">
-              <button (click)="delete()" type="button" class="btn btn-success me-2">Sil</button>
-              <button (click)="closeTrainerDeleteModal()" type="button" class="btn btn-danger">İptal</button>
+          <div class="d-flex justify-content-end">
+            <button
+              (click)="delete()"
+              type="button"
+              class="btn  btn-delete me-2"
+            >
+              <i class="fa-solid fa-trash"></i>Sil
+            </button>
+            <button
+              (click)="closeTrainerDeleteModal()"
+              type="button"
+              class="btn btn-cancel"
+            >
+              X İptal
+            </button>
           </div>
         </div>
+      </div>
     </div>
   </div>
-  <div *ngIf="dataLoaded">
-      <img  *ngFor="let image of trainer.images" width="256" height="256" src="{{image ? 'data:image/jpg;base64,' + image : ''}}" alt="none">
-  </div>
-  
+</div>

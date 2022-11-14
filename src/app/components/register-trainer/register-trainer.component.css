@@ -1,0 +1,26 @@
+
+.form-signup .form-floating input{
+    border:none;
+    margin-bottom: 20px;
+    
+  }
+  h3{
+    text-shadow: 1px 1px 3px #C78561;
+    color: #fff;
+  }
+  .btn-register{
+    background-color: #C78561;
+    color: #fff;
+  }
+  .btn-register:hover{
+    background-color: #fff;
+    color: #C78561;
+  }
+  
+  .form-signup{
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: #F0E8DB;
+    padding: 20px;
+    box-shadow: 2px 2px 7px rgb(225, 225, 225);
+  }

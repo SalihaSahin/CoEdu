@@ -1,8 +1,9 @@
 <div class="content">
-  <div class="col-md-12">
-    <div class="card">
-      <div class="card-header">
-        <h5 class="title">Güncelle</h5>
+  <div class="col-md-6">
+    <div class="card form-card">
+      <div class="">
+        <h5 class="title update-title">
+          <i class="fa-solid fa-pen-nib"></i> <b>Güncelle</b></h5>
       </div>
       <div class="card-body">
         <form [formGroup]="userUpdateForm">
@@ -82,17 +83,22 @@
           <div class="mb-3" hidden>
             <label for="status">Eğitmen Şifre</label>
             <div class="form-group">
-                <input type="password" id="status" 
-                formControlName="status" class="form-control" 
-                placeholder="Eğitmen Şifre" />
+              <input
+                type="password"
+                id="status"
+                formControlName="status"
+                class="form-control"
+                placeholder="Eğitmen Şifre"
+              />
             </div>
-        </div>
+          </div>
         </form>
       </div>
-      <div class="card-footer">
-        <button class="btn btn-fill btn-primary" (click)="updateUser()">
+      <div class="">
+        <button class=" btn btn-update mx-3 " (click)="updateUser()">
           Güncelle
         </button>
+        <button class="btn  btn-delete" routerLink="/">X İptal</button>
         <!-- <button class="btn btn-fill btn-danger mb-2 me-2 " routerLink="/users">İptal</button> -->
       </div>
     </div>

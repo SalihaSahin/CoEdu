@@ -1,8 +1,12 @@
-<body class="text-center">
-  <main class="form-signin w-100 m-auto">
+<body >
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-5 ">
+  <main class="form-signup  ">
      <form [formGroup]="registerForm" id="userForm">
-      <h1 class="h3 mb-3 fw-normal">Kullanıcı Üye Ol</h1>
-
+      <h3 class=" mb-3 "><b> KULLANICI ÜYE OL <i class="fa-regular fa-face-smile"></i>
+     </b></h3>
+    
       <div class="form-floating">
         <input
           type="text"
@@ -14,7 +18,7 @@
         <label for="UserName">Adınız</label>
       </div>
 
-      <div class="form-floating mb-2">
+      <div class="form-floating ">
         <input
           type="text"
           formControlName="UserSurName"
@@ -25,7 +29,7 @@
         <label for="UserSurName">Soyadınız</label>
       </div>
 
-      <div class="form-floating mb-2">
+      <div class="form-floating ">
         <input
           type="email"
           formControlName="UserEmail"
@@ -36,7 +40,7 @@
         <label for="UserEmail">E-posta</label>
       </div>
 
-      <div class="form-floating mb-2">
+      <div class="form-floating ">
         <input
           type="password"
           formControlName="UserPassword"
@@ -48,16 +52,17 @@
       </div>
 
       <button
-        class="w-100 btn btn-md btn btn-outline-dark"
+        class=" btn w-100 btn-register"
         type="submit"
         (click)="register()"
         [disabled]="!registerForm.valid"
       >
         Üye ol
       </button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
-      <a routerLink="../trainer/register">Eğitmen Olarak Üye Ol</a>
+      <p class="mt-5 mb-3 text-muted text-center">&copy; 2021–2022</p>
+      <p  class="text-center " routerLink="../trainer/register"> <b> Eğitmen Olarak Üye Ol <i class="fa-solid fa-right-to-bracket"></i></b></p>
     </form>
   </main> 
-  
+</div> 
+</div>
 </body>

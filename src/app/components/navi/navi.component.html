@@ -19,7 +19,7 @@
           <a class="nav-link  " aria-current="page" href="">Ana Sayfa </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  "  aria-current="page" href="" >Hakkımızda</a>
+          <a class="nav-link  "  aria-current="page" routerLink="/aboutus">Hakkımızda</a>
         </li>
 <li class="nav-item">
   <app-fav-summary></app-fav-summary>
@@ -63,7 +63,7 @@
           <li><a  (click)="changeTrainerPassword()" class="dropdown-item" >Şifrenizi Değitirin</a></li>
           <li><a  (click)="logout()" class="dropdown-item" >Çıkış Yap</a></li>
         </ul>
-        <ul *ngIf="authService.role=='user'" class="dropdown-menu">
+        <ul class="dropdown-menu">
           <li><a class="dropdown-item" (click)="userProfile()" >Profile</a></li>
           <li><a class="dropdown-item" (click)="userUpdate()" >Profile Düzenle</a></li>
           <li><a  (click)="changeUserPassword()" class="dropdown-item" >Şifrenizi Değitirin</a></li>
@@ -84,14 +84,16 @@
       <p>Educa , eğitim kurslarında uzmanlaşmış , bir çok farklı alanda <br> ulaşılabilecek pek çok sayıda eğitmenlerle Türkiye merkezli küresel bir eğitim sağlayıcısıdır.</p>
       <div class="detail-btn btn" ><fa-icon [icon]="faAnglesRight"></fa-icon> Daha Fazla Öğren</div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 ">
       <img src="../../../assets/image/main-img.png" alt="" class="main-img">
     </div>
   </div>
-  <img src="../../../assets/image/group.png" alt="" width="15%" class="main-img-group">
+  <img src="../../../assets/image/group.png " alt="" width="15%" class="main-img-group ">
 </div>
-<div class="container box">
- <h5 class=" promise"> "Bir mermer parçası için heykel traş ne ise ruh içinde eğitim odur."</h5>
- <p class="writer">-Thomas Edison</p>
+<!-- Düzenle -->
+<div class="container box  ">
+ <h5 class=" promise "> "Bir mermer parçası için heykel traş ne ise ruh içinde eğitim odur."</h5>
+ <p class="writer ">-Thomas Edison</p>
 </div>
+ 
 </body>

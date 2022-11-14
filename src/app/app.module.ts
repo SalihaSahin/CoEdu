@@ -44,6 +44,7 @@ import { UserDeleteComponent } from './components/user-delete/user-delete.compon
 import { FavTrainerListComponent } from './components/fav-trainer-list/fav-trainer-list.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FooterComponent } from './components/footer/footer.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 
 export function tokenGetter() {
@@ -76,7 +77,8 @@ export function tokenGetter() {
     TrainerDeleteComponent,
     UserDeleteComponent,
     FavTrainerListComponent,
-    FooterComponent
+    FooterComponent,
+    AboutUsComponent
 
     
   ],

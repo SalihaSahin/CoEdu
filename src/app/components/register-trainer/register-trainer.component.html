@@ -1,34 +1,39 @@
 
-<body class="text-center">
-  <main class="form-signin w-100 m-auto">
+<body >
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-5 ">
+  <main class="form-signup">
       <form [formGroup]="registerTrainerForm" id="trainerForm">
-        <h1 class="h3 mb-3 fw-normal">Eğitmen Üye Ol</h1>
+        <h3 class="h3 mb-3 fw-normal"> <b> EĞİTMEN ÜYE OL <i class="fa-regular fa-face-smile"></i>
+        </b></h3>
   
         <div class="form-floating">
           <input type="text" formControlName="TrainerName" class="form-control" id="TrainerName" placeholder="First Name">
           <label for="TrainerName">Adınız</label>
         </div>
   
-        <div class="form-floating mb-2">
+        <div class="form-floating ">
           <input type="text" formControlName="TrainerSurName" class="form-control" id="TrainerSurName" placeholder="Last Name">
           <label for="TrainerSurName">Soyadınız</label>
         </div>
   
-        <div class="form-floating mb-2">
+        <div class="form-floating ">
           <input type="email" formControlName="TrainerEmail" class="form-control" id="TrainerEmail" placeholder="name@example.com">
           <label for="TrainerEmail">E-posta</label>
         </div>
   
-        <div class="form-floating mb-2">
+        <div class="form-floating ">
           <input type="password" formControlName="TrainerPassword" class="form-control" id="TrainerPassword" placeholder="TrainerPassword">
           <label for="TrainerPassword">Parola</label>
         </div>
   
-        <button class="w-100 btn btn-md btn btn-outline-dark" type="submit" (click)="registerTrainer()"
+        <button class="w-100 btn btn-register" type="submit" (click)="registerTrainer()"
           [disabled]="!registerTrainerForm.valid" >Üye ol</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2021–2022</p>
       </form>
 </main>
-
+</div>
+</div>
 </body>
       

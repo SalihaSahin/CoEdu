@@ -12,7 +12,7 @@
       <div class="card-body">
         <h5 class="card-title" ><i class="fa-solid fa-user card-icon"></i>&nbsp; {{trainerDetail.trainerName}} &nbsp; {{trainerDetail.trainerSurname}}</h5>
         <p class="card-text"><i class="fa-solid fa-envelope card-icon"></i> &nbsp; {{trainerDetail.trainerEmail}}</p>
-        <p class="card-text" ><i class="fa-solid fa-building-columns card-icon" ></i>{{trainerDetail.trainerSchool}}</p> 
+        <p class="card-text" ><i class="fa-solid fa-building-columns card-icon" ></i>&nbsp; {{trainerDetail.trainerSchool}}</p> 
         <p class="card-text" ><b>{{trainerDetail.trainerBranch}}</b> Bölümü</p> 
         <p   class="card-text " > Saatlik Ücret: <b> {{trainerDetail.trainerWage}}</b> <i class="fa-solid fa-turkish-lira-sign"></i> </p>
         <button *ngIf="authService.role=='user'||authService.role=='admin' " (click)="addToFav(trainerDetail)" type="button" class="btn btn-fav"> <i class="fa-solid fa-heart"></i></button>

@@ -1,0 +1,37 @@
+h5.update-title, i{
+    color: #14463A;
+    font-size: 25px;  
+}
+.form-card{
+    border: none;
+}
+button.btn-update{
+  
+    background-color:#14463A ;
+    border-color:#14463A ;
+    color: #fff;
+ 
+}
+button.btn-update:hover{
+background-color: #fff;
+color: #14463A;
+}
+.btn-delete{
+  
+    background-color:#ffff ;
+    border-color:#C78561 ;
+    color: #C78561;
+ 
+}
+.btn-delete:hover{
+    background-color: #C78561;
+    color: #ffff;
+    
+}
+label{
+    font-weight:bold; 
+} 
+.form-control, .form-select{
+    box-shadow: 2px 1px 5px rgb(207, 206, 206);
+    border:2px solid #C78561;
+}
