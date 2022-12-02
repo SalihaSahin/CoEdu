@@ -28,7 +28,8 @@ export class TrainerDetailComponent implements OnInit {
 
   dataLoaded = false;
   filterText = '';
-
+  filterLesson='';
+  
   currentTrainerDetail?: TrainerDetail;
   currentTrainer?: Trainer;
 

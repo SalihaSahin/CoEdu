@@ -9,7 +9,7 @@ export class FilterPipePipe implements PipeTransform {
 
   transform(value:TrainerDetail[], filterText:string): TrainerDetail[] {
   console.log("filter1");
-  
+   
     if (!Array.isArray(value)) {
       return value;
     }

@@ -1,3 +1,4 @@
+import { FooterComponent } from './components/footer/footer.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FavTrainerListComponent } from './components/fav-trainer-list/fav-trainer-list.component';
@@ -18,6 +19,7 @@ import { TrainerAddComponent } from './components/trainer-add/trainer-add.compon
 import { TrainerDetailComponent } from './components/trainer-detail/trainer-detail.component';
 import { TrainerComponent } from './components/trainer/trainer.component';
 import { NgModule } from '@angular/core';
+import { PaymentComponent } from './components/payment/payment.component';
 
 
 const routes: Routes = [  
@@ -46,8 +48,10 @@ const routes: Routes = [
    {path:"users/user/:userId" , component:UserComponent},
    {path:"users/user/userchangepassword/:userId" , component:UserChangepasswordComponent},
    {path:"users/delete/:userId", component:UserDeleteComponent},
+   {path:"payment", component:PaymentComponent},
 
-   {path:"aboutus", component:AboutUsComponent}
+   {path:"aboutus", component:AboutUsComponent},
+ 
   ];
   
 @NgModule({

@@ -2,36 +2,24 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 
-<div *ngIf="dataLoaded">
 
-  
-  <table class="table">
-    <thead>
-      <tr>
-        
-        <th scope="col">#</th>
-        <th scope="col">#</th>
-        <th scope="col">#</th>
-        <th scope="col">#</th>
+<div *ngIf="dataLoaded" class="card mt-3" >
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img  class="img-fluid"  *ngFor="let image of userDetail.images" width="256" height="256" src="{{image ? 'data:image/jpg;base64,' + image :''}}" alt="none">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{userDetail.userName}} {{userDetail.userSurname}}</h5>
       
-      
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>{{userDetail.userId}}</td>
-        <td>{{userDetail.userName}}</td>
-        <td>{{userDetail.userSurname}}</td>     
-        <td>{{userDetail.userEmail}}</td>
-       
-      </tr>
-     
-    </tbody>
-  </table>
-  <div >
-    <img  *ngFor="let image of userDetail.images" width="256" height="256" src="{{image ? 'data:image/jpg;base64,' + image :''}}" alt="none">
-    <button *ngIf="authService.role=='user' || authService.role=='admin'" class="btn btn-warning me-2" (click)="navigateUpdate()">Güncelle</button>
- 
+        <p class="card-text ">{{userDetail.userEmail}}</p>
+        <button class=" btn btn-update  " routerLink="/users/update/{{userDetail.userId}}" >
+          Güncelle
+        </button>
+        <button class=" btn btn-update mx-3 " routerLink="/users/user/userchangepassword/{{userDetail.userId}}">
+         Şifreni Değiştir
+        </button>
+      </div>
+    </div>
   </div>
-
 </div>

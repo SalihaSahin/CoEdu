@@ -45,6 +45,8 @@ import { FavTrainerListComponent } from './components/fav-trainer-list/fav-train
 import { BrowserModule } from '@angular/platform-browser';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { FilterLessonPipe } from './pipes/filter-lesson.pipe';
+import { PaymentComponent } from './components/payment/payment.component';
 
 
 export function tokenGetter() {
@@ -78,7 +80,9 @@ export function tokenGetter() {
     UserDeleteComponent,
     FavTrainerListComponent,
     FooterComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    FilterLessonPipe,
+    PaymentComponent
 
     
   ],

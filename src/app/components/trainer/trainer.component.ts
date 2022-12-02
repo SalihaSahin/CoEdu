@@ -43,6 +43,9 @@ export class TrainerComponent implements OnInit {
   navigateUpdate() {
     this.router.navigate([`trainers/update/${this.trainerId}`]);
   }
+  navigateAddToCard() {
+    this.router.navigate([`payment` ], { queryParams: { trainerId: this.trainerId } });
+  }
   navigateDelete() {
     this.router.navigate([`trainers/delete/${this.trainerId}`]);
   }

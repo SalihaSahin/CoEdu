@@ -16,11 +16,7 @@
       </div> -->
       <div class="container">
         <div class="row">
-          <div class="col">
-          </div>
-          <div class="col order-12">
-          </div>
-          <div class="col-md-4 order-1">
+          <div class="col-md-4 ">
             <p class="search-txt">Eğitmen Ara</p>
             <div class="input-group mb-3 mt-3 search-trainer">
               <input type="text" class="form-control"  [(ngModel)]="filterText"    id="filterText"
@@ -30,14 +26,30 @@
               </div>
             </div>
           </div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4 order-1">
+            <p class="search-txt">Ders Ara</p>
+            <div class="input-group mb-3 mt-3 search-trainer">
+              <input type="text" class="form-control"  [(ngModel)]="filterLesson"    id="filterLesson"
+              placeholder="Arama ifadesi giriniz ">
+              <div class="input-group-append">
+                <button class="btn " type="button"><fa-icon [icon]="faMagnifyingGlass"></fa-icon></button>
+              </div>
+            </div>
+          </div>
         </div>
       </div> 
+      
+        
+         
+        
+      
       
   <!-- <div *ngIf="filterText" class="alert alert-success">
     {{filterText}} aradınız
   </div> -->
 
-  <div *ngFor="let trainer of trainerDetails | filterPipe:filterText"class="card  mb-3 mx-4 trainer-card" style="display: inline-block; max-width: 470px; ">
+  <div *ngFor="let trainer of trainerDetails | filterPipe:filterText | filterLesson:filterLesson"class="card  mb-3 mx-4 trainer-card" style="display: inline-block; max-width: 470px; ">
     <div class="row g-0 ">
       <div class="col-md-4 ">
         <img src="{{trainer.images ? 'data:image/jpg;base64,' + trainer.images[0]: '...'}}" class="img-fluid tra-img " alt="..."> -

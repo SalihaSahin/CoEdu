@@ -68,6 +68,7 @@
    
     <div class="text-end">
     <button *ngIf="authService.role=='trainer' || authService.role=='admin'" class="btn btn-update " (click)="navigateUpdate()"><i class="fa-solid fa-pen-nib"></i>Güncelle</button>
+    <button class="btn btn-update " (click)="navigateAddToCard()"><i class="fa-solid fa-pen-nib"></i>Satın Al</button>
     <button type="button" class="btn btn-delete " *ngIf="authService.role=='admin'" (click)="navigateDelete()"><i class="fa-solid fa-trash"></i>Sil</button>
     
   </div>

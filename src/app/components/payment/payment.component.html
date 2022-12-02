@@ -1,0 +1,74 @@
+<div class="d-grid justify-content-center">
+  <span>Total: {{ total }} TL</span>
+  <form [formGroup]="paymentForm" class="d-grid gap-2">
+    <div class="form-group">
+      <label for="hour">Hour</label>
+      <input
+        type="number"
+        name="hour"
+        id="hour"
+        class="form-control"
+        formControlName="hour"
+        (change)="calculateTotal()"
+      />
+    </div>
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input
+        type="text"
+        name="firstName"
+        id="firstName"
+        class="form-control"
+        formControlName="firstName"
+      />
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input
+        type="text"
+        name="firstName"
+        id="lastName"
+        class="form-control"
+        formControlName="lastName"
+      />
+    </div>
+    <div class="form-group">
+      <label for="cardNumber">Card Number</label>
+      <div class="d-flex gap-2">
+        <input
+          type="text"
+          name="cardNumber"
+          id="cardNumber"
+          class="form-control"
+          formControlName="cardNumber"
+        />
+        <button (click)="findByCardNumber()" class="btn btn-primary">
+          Find
+        </button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="cvv">CVV</label>
+      <input
+        type="number"
+        name="cvv"
+        id="cvv"
+        class="form-control"
+        formControlName="cvv"
+      />
+    </div>
+    <div class="form-group">
+      <label for="expiryDate">Expiry Date</label>
+      <input
+        type="date"
+        name="expiryDate"
+        id="expiryDate"
+        class="form-control"
+        formControlName="expiryDate"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="save()">
+      Tamamla
+    </button>
+  </form>
+</div>
