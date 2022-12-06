@@ -1,0 +1,43 @@
+ input::-webkit-outer-spin-button,input::-webkit-inner-spin-button {
+    -webkit-appearance: none; margin: 0;
+    
+    }
+    h3{
+        margin: 0;
+        color: #ffffff;
+        background-color: #CC8264;
+        width: 170px;
+        padding: 10px;
+        border-radius:5px 5px 0px 0px;
+    }
+    hr{
+         margin: 0;
+        border-top: 3px solid ;
+        opacity: 1;
+        color: #CC8264;
+       
+    }
+    button.btn-search{
+        background-color:#14463A ;
+        border-color:#14463A ;
+        color: #fff;
+     
+    }
+    button.btn-search:hover{
+    background-color: #fff;
+    color: #14463A;
+    }
+    .btn-comp:hover{
+        
+     
+        background-color:#ffff ;
+        border-color:#14463A ;
+        color: #14463A;
+     
+    }
+    .btn-comp{
+        margin-left: 20px;
+        background-color: #14463A;
+        color: #ffff;
+        
+    }

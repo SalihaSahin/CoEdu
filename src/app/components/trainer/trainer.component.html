@@ -16,6 +16,7 @@
         <p class="card-text" ><b>{{trainerDetail.trainerBranch}}</b> Bölümü</p> 
         <p   class="card-text " > Saatlik Ücret: <b> {{trainerDetail.trainerWage}}</b> <i class="fa-solid fa-turkish-lira-sign"></i> </p>
         <button *ngIf="authService.role=='user'||authService.role=='admin' " (click)="addToFav(trainerDetail)" type="button" class="btn btn-fav"> <i class="fa-solid fa-heart"></i></button>
+        <button *ngIf="authService.role=='user' || authService.role=='admin'"  class="btn btn-delete" (click)="navigateAddToCard()">Satın Al <i class="fa-solid fa-thumbs-up"></i></button>
       </div>
     </div>
   </div>
@@ -68,7 +69,7 @@
    
     <div class="text-end">
     <button *ngIf="authService.role=='trainer' || authService.role=='admin'" class="btn btn-update " (click)="navigateUpdate()"><i class="fa-solid fa-pen-nib"></i>Güncelle</button>
-    <button class="btn btn-update " (click)="navigateAddToCard()"><i class="fa-solid fa-pen-nib"></i>Satın Al</button>
+   
     <button type="button" class="btn btn-delete " *ngIf="authService.role=='admin'" (click)="navigateDelete()"><i class="fa-solid fa-trash"></i>Sil</button>
     
   </div>

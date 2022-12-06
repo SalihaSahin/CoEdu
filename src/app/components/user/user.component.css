@@ -15,3 +15,27 @@ button.btn-update:hover{
 background-color: #fff;
 color: #14463A;
 }
+h4{
+    margin: 0;
+    color: #ffffff;
+    background-color: #CC8264;
+    width: 260px;
+    padding: 10px;
+    border-radius:5px 5px 0px 0px;
+}
+hr.a{
+     margin: 0;
+    border-top: 3px solid ;
+    opacity: 1;
+    color: #CC8264;
+   
+}
+
+.correct{
+    font-size: 40px;
+    color: #03ff18;
+}
+.less-table{
+    margin-top: 150px;
+
+}

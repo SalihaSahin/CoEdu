@@ -159,4 +159,5 @@ export class PaymentComponent implements OnInit {
       this.toastrService.error('Formunuz eksik', 'Dikkat');
     }
   }
+  
 }

@@ -32,6 +32,6 @@ label{
     font-weight:bold; 
 } 
 .form-control, .form-select{
-    box-shadow: 2px 1px 5px rgb(207, 206, 206);
+    box-shadow: 2px 1px 5px rgb(226, 226, 226);
     border:1px solid #C78561;
 }

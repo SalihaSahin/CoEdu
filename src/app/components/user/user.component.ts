@@ -1,3 +1,5 @@
+import { PaymentDto } from './../../models/paymentDto';
+import { PaymentService } from './../../services/payment.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserDetailModel } from './../../models/user-detail';
 import { UserService } from './../../services/user.service';
@@ -14,21 +16,24 @@ export class UserComponent implements OnInit {
   userId: number;
   userDetail:UserDetailModel;
   dataLoaded = false;
-
+  paymentsDetail:PaymentDto[]=[]
   constructor(
     private userImageService:UserImageService,
     public authService:AuthService,
     private activatedRoute:ActivatedRoute ,
     private userService:UserService,
-    private router:Router
-
-  ) {}
+    private router:Router,
+    private paymentService:PaymentService
+    
+  ) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       this.userId = params['userId'];
       this.getByUserDetailId(this.userId);
+      this.getUserPayments(this.userId);
     });
+  
   }
   navigateUpdate() {
     this.router.navigate([`users/update/${this.userId}`]);
@@ -54,6 +59,18 @@ export class UserComponent implements OnInit {
         console.log(this.userDetail);
 
         this.getUserImages();
+      });
+  }
+
+  getUserPayments(userId: number) {
+    this.paymentService
+      .getPayments(userId)
+      .subscribe((response) => {
+        this.paymentsDetail=response.data
+        for (let i = 0; i <  this.paymentsDetail.length; i++) {
+          response.data[i]
+        }
+        this.dataLoaded = true;
       });
   }
 

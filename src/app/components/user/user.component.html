@@ -4,6 +4,7 @@
 
 
 <div *ngIf="dataLoaded" class="card mt-3" >
+ 
   <div class="row g-0">
     <div class="col-md-4">
       <img  class="img-fluid"  *ngFor="let image of userDetail.images" width="256" height="256" src="{{image ? 'data:image/jpg;base64,' + image :''}}" alt="none">
@@ -22,4 +23,19 @@
       </div>
     </div>
   </div>
+ <div class="less-table">
+  <h4><i class="fa-sharp fa-solid fa-graduation-cap"></i>ALINAN DERSLER</h4>
+  <hr class="a">
+
+  <div  *ngFor="let payment of paymentsDetail" >
+    <div class="card ">    
+      <div class="card-body">
+        <h5 class="card-title" style="display: inline-block; text-transform:uppercase" >  <i class="fa-solid fa-check correct"></i> {{payment.trainerFullName}} </h5> adlı eğitmenden "bu ders" satın alındı.
+        <p class="card-text">"{{payment.creditCardNumber}}" numaralı kartınız ile şu tarihte {{payment.paymentDate}} toplamda  <b>  {{payment.total}}</b> <i class="fa-solid fa-turkish-lira-sign"></i> ödeme yapıldı. </p>
+        
+      </div>
+    </div>
+ 
+  </div>
+</div>
 </div>
