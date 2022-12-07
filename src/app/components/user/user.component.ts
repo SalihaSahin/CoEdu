@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { PaymentDto } from './../../models/paymentDto';
 import { PaymentService } from './../../services/payment.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -6,26 +7,25 @@ import { UserService } from './../../services/user.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserImageService } from './../../services/user-image.service';
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
   userId: number;
-  userDetail:UserDetailModel;
+  userDetail: UserDetailModel;
   dataLoaded = false;
-  paymentsDetail:PaymentDto[]=[]
+  paymentsDetail: PaymentDto[] = [];
   constructor(
-    private userImageService:UserImageService,
-    public authService:AuthService,
-    private activatedRoute:ActivatedRoute ,
-    private userService:UserService,
-    private router:Router,
-    private paymentService:PaymentService
-    
-  ) { }
+    private userImageService: UserImageService,
+    public authService: AuthService,
+    private activatedRoute: ActivatedRoute,
+    private userService: UserService,
+    private router: Router,
+    private paymentService: PaymentService,
+    private datePipe: DatePipe
+  ) {}
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
@@ -33,7 +33,6 @@ export class UserComponent implements OnInit {
       this.getByUserDetailId(this.userId);
       this.getUserPayments(this.userId);
     });
-  
   }
   navigateUpdate() {
     this.router.navigate([`users/update/${this.userId}`]);
@@ -45,33 +44,35 @@ export class UserComponent implements OnInit {
       .subscribe((response) => {
         if (response.data.length > 0) {
           this.userDetail.images = response.data.map(
-            (image) => image.imagePath 
+            (image) => image.imagePath
           );
           this.dataLoaded = true;
         }
       });
   }
   getByUserDetailId(userId: number) {
-    this.userService
-      .getUserDetailById(userId)
-      .subscribe((response) => {
-        this.userDetail = response.data;
-        console.log(this.userDetail);
+    this.userService.getUserDetailById(userId).subscribe((response) => {
+      this.userDetail = response.data;
+      console.log(this.userDetail);
 
-        this.getUserImages();
-      });
+      this.getUserImages();
+    });
   }
 
   getUserPayments(userId: number) {
     this.paymentService
-      .getPayments(userId)
+      .getPaymentDetailsByUserId(userId)
       .subscribe((response) => {
-        this.paymentsDetail=response.data
-        for (let i = 0; i <  this.paymentsDetail.length; i++) {
-          response.data[i]
-        }
+        this.paymentsDetail = response.data;
+        this.paymentsDetail.forEach((detail) => {
+          detail.paymentDate = this.datePipe.transform(
+            detail.paymentDate,
+            'yyyy-MM-dd'
+          );
+        });
         this.dataLoaded = true;
       });
   }
 
+  
 }

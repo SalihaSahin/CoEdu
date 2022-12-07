@@ -1,5 +1,6 @@
 div.card{
     border:none;
+   
 }
 img{
     border-radius: 10px;
@@ -22,6 +23,7 @@ h4{
     width: 260px;
     padding: 10px;
     border-radius:5px 5px 0px 0px;
+  
 }
 hr.a{
      margin: 0;
@@ -32,10 +34,31 @@ hr.a{
 }
 
 .correct{
-    font-size: 40px;
-    color: #03ff18;
+    font-size: 30px;
+    text-shadow: 1px 1px 3px #C78561;
+    color: #fff;
 }
+.ty{
+   
+    font-size: 20px;
+    border: none;
+    color:#C78561; 
+    animation-name: example;
+    animation-duration: 10s;
+}
+@keyframes example {
+    from {color: #fff;}
+    to {color: #C78561;}
+  }
 .less-table{
     margin-top: 150px;
 
+}
+.pay-table{
+    background-color:#F0E8DB;
+    box-shadow: 2px 2px 7px rgb(225, 225, 225);
+}
+.a-table{
+    
+    box-shadow: 2px 2px 7px rgb(225, 225, 225);
 }

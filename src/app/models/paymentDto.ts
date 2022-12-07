@@ -1,7 +1,9 @@
 
 export interface PaymentDto{
    creditCardNumber:string,
-   paymentDate:Date,
+   paymentDate:string,
    total:Number,
-   trainerFullName:string
+   trainerFullName:string,
+   userFullName:string,
+   lessonName:string
 }

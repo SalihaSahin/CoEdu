@@ -23,4 +23,9 @@ export class PaymentService {
     let newPath= this.apiUrl+"payments/getallbyuserid?id="+userId
     return this.httpClient.get<ListResponseModel<PaymentDto>>(newPath);
   }
+
+  getPaymentDetailsByUserId(userId:number):Observable<ListResponseModel<PaymentDto>>{
+    let newPath= this.apiUrl+"payments/getpaymentdetailsbyuserid?id="+userId
+    return this.httpClient.get<ListResponseModel<PaymentDto>>(newPath);
+  }
 }

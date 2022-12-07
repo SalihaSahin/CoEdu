@@ -8,35 +8,31 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-fav-trainer-list',
   templateUrl: './fav-trainer-list.component.html',
-  styleUrls: ['./fav-trainer-list.component.css']
-}) 
+  styleUrls: ['./fav-trainer-list.component.css'],
+})
 export class FavTrainerListComponent implements OnInit {
-  favItems:FavItem[]=[];
+  favItems: FavItem[] = [];
   trainerId: number;
   trainerDetail: TrainerDetail;
   dataLoaded = false;
 
   constructor(
-    private favService:FavService, 
-    private toastrService:ToastrService,
-  ) { }
+    private favService: FavService,
+    private toastrService: ToastrService
+  ) {}
 
   ngOnInit(): void {
-      this.getFav();
-      
-    
+    this.getFav();
   }
 
-  getFav(){
-    this.favItems=this.favService.list();
-   
-    
+  getFav() {
+    this.favItems = this.favService.list();
   }
-  removeFromFav(trainerDetail:TrainerDetail){
+  removeFromFav(trainerDetail: TrainerDetail) {
     this.favService.removeFromFav(trainerDetail);
-    this.toastrService.error("Silindi ", trainerDetail.trainerName+" favorilerden kaldırıldı.")
+    this.toastrService.error(
+      'Silindi ',
+      trainerDetail.trainerName + ' favorilerden kaldırıldı.'
+    );
   }
-
-  
-
 }
