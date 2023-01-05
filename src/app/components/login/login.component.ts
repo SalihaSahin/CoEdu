@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
       this.authService.login(loginModel).subscribe(response=>{
         this.toastrService.info(response.message)
         localStorage.setItem("token",response.data.token)
+        this.router.navigate(['/']);
         console.log(response)
       },responseError=>{
         this.toastrService.error(responseError.error)

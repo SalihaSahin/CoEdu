@@ -73,7 +73,10 @@ export class NaviComponent implements OnInit {
     this.router.navigate([`trainers/update/${this.authService.identifier}`]);
   }
  
-  
+  trainerDelete() {
+    this.router.navigate([`trainers/delete/${this.authService.identifier}`]);
+  }
+ 
   trainerProfile() {
     this.router.navigate([`trainers/trainer/${this.authService.identifier}`]);
   }

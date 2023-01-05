@@ -1,7 +1,5 @@
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
-
-
 import { FavService } from './../../services/fav.service';
 import { TrainerImageService } from './../../services/trainer-image.service';
 import { TrainerDetailService } from './../../services/trainer-detail.service';

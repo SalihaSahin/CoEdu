@@ -18,9 +18,7 @@
         <li class="nav-item">
           <a class="nav-link  " aria-current="page" href="">Ana Sayfa </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link  " aria-current="page" href="">İletişim </a>
-        </li>
+    
         <li class="nav-item">
           <a class="nav-link  "  aria-current="page" routerLink="/aboutus">Hakkımızda</a>
         </li>
@@ -63,10 +61,11 @@
         <ul *ngIf="authService.role=='trainer'" class="dropdown-menu">
           <li><a  class="dropdown-item" (click)="trainerProfile()">Profile  </a></li>
           <li><a  class="dropdown-item" (click)="trainerUpdate()">Profile Düzenle </a></li>
+          <li><a  class="dropdown-item" (click)="trainerDelete()">Profile Sil </a></li>
           <li><a  (click)="changeTrainerPassword()" class="dropdown-item" >Şifrenizi Değitirin</a></li>
           <li><a  (click)="logout()" class="dropdown-item" >Çıkış Yap</a></li>
         </ul>
-        <ul class="dropdown-menu">
+        <ul  *ngIf="authService.role=='user'" class="dropdown-menu">
           <li><a class="dropdown-item" (click)="userProfile()" >Profile</a></li>
           <li><a class="dropdown-item" (click)="userUpdate()" >Profile Düzenle</a></li>
           <li><a  (click)="changeUserPassword()" class="dropdown-item" >Şifrenizi Değitirin</a></li>

@@ -17,6 +17,9 @@
         <button class=" btn btn-update  " routerLink="/users/update/{{userDetail.userId}}" >
           Güncelle
         </button>
+        <button class=" btn btn-update mx-3 " routerLink="/users/delete/{{userDetail.userId}}" >
+         Kaldır
+        </button>
         <button class=" btn btn-update mx-3 " routerLink="/users/user/userchangepassword/{{userDetail.userId}}">
          Şifreni Değiştir
         </button>
@@ -31,7 +34,7 @@
     <div class="card a-table mt-5">    
       <div class="card-body">
         <h5 class="card-title" style="display: inline-block; " >  <i class="fa-solid fa-check correct"></i> {{payment.trainerFullName}} </h5> adlı eğitmenden {{payment.lessonName}} dersi satın alındı.
-        <p class="card-text" > <span style="text-transform:uppercase ;"> {{payment.userFullName}} </span> isimli ve <span style="text-decoration:line-through solid rgb(211, 209, 209) 8px;"> {{payment.creditCardNumber}}</span> numaralı kartınız ile şu tarihte {{payment.paymentDate}} toplamda  <b>  {{payment.total}}</b> <i class="fa-solid fa-turkish-lira-sign"></i> ödeme yapıldı. </p>   
+        <p class="card-text" > <span style="text-transform:uppercase ;"> {{payment.userFullName}} </span> isimli  <span style="text-decoration:line-through solid rgb(211, 209, 209) 8px;"></span> kartınız ile şu tarihte {{payment.paymentDate}} toplamda  <b>  {{payment.total}}</b> <i class="fa-solid fa-turkish-lira-sign"></i> ödeme yapıldı. </p>   
       <button class="btn ty"  > <p > Teşekkür Ederiz..<i class="fa-solid fa-heart "></i></p>  <i style="display:none;" class="x fa-solid fa-face-smile"></i></button>
       </div>
     </div>

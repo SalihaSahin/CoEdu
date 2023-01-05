@@ -9,7 +9,6 @@ import { FormOfEduService } from './../../services/form-of-edu.service';
 import { FormOfEdu } from './../../models/formOfEdu';
 import { Address } from 'src/app/models/address';
 import { AddressService } from 'src/app/services/address.service';
-
 import { TrainerService } from './../../services/trainer.service';
 import { Trainer } from 'src/app/models/trainer';
 import { Component, OnInit } from '@angular/core';

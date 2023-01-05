@@ -1,3 +1,4 @@
+import { LoginGuard } from './guards/login.guard';
 import { FooterComponent } from './components/footer/footer.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -30,25 +31,25 @@ const routes: Routes = [
    {path:"trainers/formOfEdu/:formOfEduId" , component:TrainerDetailComponent},
    {path:"trainers/eductaion/:educationId" , component:TrainerDetailComponent},
    {path:"trainers/trainer/:trainerId" , component:TrainerComponent},
-   {path:"trainers/add", component:TrainerAddComponent},
+   {path:"trainers/add", component:TrainerAddComponent , },
    {path:"trainers/add/:trainerId", component:TrainerAddComponent},
    {path:"trainers/:trainerId/images", component:TrainerAddImageComponent},
    {path: "trainer/register", component: RegisterTrainerComponent },
-   {path:"trainers/update/:trainerId",component:TrainerUpdateComponent},
-   {path:"trainers/trainer/trainerchangepassword/:trainerId" , component:TrainerChangepasswordComponent},
-   {path:"trainers/delete/:trainerId", component:TrainerDeleteComponent},
+   {path:"trainers/update/:trainerId",component:TrainerUpdateComponent, canActivate: [LoginGuard]},
+   {path:"trainers/trainer/trainerchangepassword/:trainerId" , component:TrainerChangepasswordComponent, canActivate: [LoginGuard]},
+   {path:"trainers/delete/:trainerId", component:TrainerDeleteComponent, canActivate: [LoginGuard]},
    {path:"favtrainerlist", component:FavTrainerListComponent},
    //user
    {path: "register", component: RegisterComponent },
    {path:"login",component:LoginComponent}, 
-   {path:"users/update/:userId",component:UserUpdateComponent },
-   {path:"users/add", component:UserAddComponent},
-   {path:"users/add/:userId", component:UserAddComponent},
+   {path:"users/update/:userId",component:UserUpdateComponent, canActivate: [LoginGuard] },
+   {path:"users/add", component:UserAddComponent },
+   {path:"users/add/:userId", component:UserAddComponent, },
    {path:"users/:userId/images", component:UserAddImageComponent},
    {path:"users/user/:userId" , component:UserComponent},
-   {path:"users/user/userchangepassword/:userId" , component:UserChangepasswordComponent},
-   {path:"users/delete/:userId", component:UserDeleteComponent},
-   {path:"payment", component:PaymentComponent},
+   {path:"users/user/userchangepassword/:userId" , component:UserChangepasswordComponent, canActivate: [LoginGuard]},
+   {path:"users/delete/:userId", component:UserDeleteComponent, canActivate: [LoginGuard]},
+   {path:"payment", component:PaymentComponent, canActivate: [LoginGuard]},
 
    {path:"aboutus", component:AboutUsComponent},
  

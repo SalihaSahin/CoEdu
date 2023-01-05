@@ -1,20 +1,25 @@
 <div *ngIf="dataLoaded" class="card">
-    <div class="card-header">
-        <div class="d-flex justify-content-between">
-            <h5>{{user.userName}} {{user.userSurname}} Eğitmeni Sil</h5>
-        </div>
-  
-    </div>
     <div class="card-body">
-        <strong>{{user.userId}}</strong> id değerine sahip <strong>{{user.userName}} {{user.userSurname}}</strong> aracını silmek istediğinizden emin misiniz?<br>
-        <img *ngFor="let image of user.images" width="256" height="256" src="{{image ? 'data:image/jpg;base64,' + image : ''}}" alt="none">
-        <div class="row mt-3"> 
+     <div class="row">
+        <div class="col-md-4">
+            <img *ngFor="let image of user.images"  class="img-fluid rounded-start" src="{{image ? 'data:image/jpg;base64,' + image : ''}}" alt="none">
+        </div>
+        <div class="col-md-8">
+         <div class="">
+            <p class="card-text">
+                {{user.userName}} {{user.userSurname}} adlı kullanıcıyı silmek istediğinizden emin misiniz?
+            </p>
+         </div>
+        </div>
+     </div>
+       <div class="row "> 
             <div class="d-flex justify-content-end">
-              <button (click)="deleteUser()" type="button" class="btn btn-success me-2">Sil</button>
-              <button (click)="closeUserDeleteModal()" type="button" class="btn btn-danger">İptal</button>
+              <button (click)="deleteUser()" type="button" class="btn  btn-delete me-2">  <i class="fa-solid fa-trash"></i>Sil</button>
+              <button (click)="closeUserDeleteModal()" type="button" class="btn btn btn-cancel">İptal</button>
           </div>
         </div>
        
     
     </div>
   </div>
+ 

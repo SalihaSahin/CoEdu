@@ -52,18 +52,18 @@
   <div *ngFor="let trainer of trainerDetails | filterPipe:filterText | filterLesson:filterLesson"class="card  mb-3 mx-4 trainer-card" style="display: inline-block; max-width: 470px; ">
     <div class="row g-0 ">
       <div class="col-md-4 ">
-        <img src="{{trainer.images ? 'data:image/jpg;base64,' + trainer.images[0]: '...'}}" class="img-fluid tra-img " alt="..."> -
+        <img src="{{trainer.images ? 'data:image/jpg;base64,' + trainer.images[0]: '...'}}" class="img-fluid tra-img " alt="..."> 
       </div>
       <div class="col-md-8">
         <div class="card-body">
           <h5 class="card-title">{{trainer.trainerName}} {{trainer.trainerSurname}}</h5>
           <p class="card-text">{{trainer.trainerBranch}}</p>
-          <p class="card-text"> {{trainer.trainerWage | currency}}</p>
+          <p class="card-text"> {{trainer.trainerWage}}  <i class="fa fa-turkish-lira"></i>  </p>
           <p class="card-text"><small class="text-muted">{{trainer.addressName}}</small></p>
           <p class="card-text"><small class="text-muted">{{trainer.formOfEduName}}</small></p>
           <p class="card-text"><small class="text-muted">{{trainer.educationName}}</small></p>
           <button *ngIf="authService.isAuthenticated()" routerLink="/trainers/trainer/{{trainer.trainerId}}" class="btn detail-btn "><fa-icon [icon]="faCircleInfo"></fa-icon>&nbsp;Detay </button>
-          <button (click)="addToFav(trainer)" type="button" class="btn btn-fav"><fa-icon [icon]="faHeart"></fa-icon>&nbsp;Favorilere Ekle</button>
+          <button *ngIf= " authService.role=='user' || authService.role=='admin'" (click)="addToFav(trainer)" type="button" class="btn btn-fav"><fa-icon [icon]="faHeart"></fa-icon>&nbsp;Favorilere Ekle</button>
         </div>
       </div>
     </div>
